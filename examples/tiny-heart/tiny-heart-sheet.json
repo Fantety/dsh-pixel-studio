@@ -1,0 +1,23 @@
+{
+  "format": "dsh-pixel-studio-spritesheet",
+  "version": 1,
+  "width": 8,
+  "height": 8,
+  "frameWidth": 8,
+  "frameHeight": 8,
+  "columns": 1,
+  "rows": 1,
+  "padding": 0,
+  "gutter": 0,
+  "frames": [
+    {
+      "index": 0,
+      "label": "Artwork",
+      "x": 0,
+      "y": 0,
+      "width": 8,
+      "height": 8,
+      "durationMs": 100
+    }
+  ]
+}

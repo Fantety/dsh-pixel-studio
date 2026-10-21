@@ -1,0 +1,73 @@
+{
+  "generator": "dsh-pixel-studio",
+  "version": "1.1.0",
+  "generatedAt": "2026-10-21T06:37:49.632Z",
+  "name": "starlight-wizard-still",
+  "kind": "art",
+  "width": 24,
+  "height": 24,
+  "frameCount": 1,
+  "fps": 1,
+  "loop": 0,
+  "palette": {
+    "name": "legend",
+    "label": "Legend",
+    "colors": [
+      "#1A1626FF",
+      "#3D2C8DFF",
+      "#8B5CF6FF",
+      "#F2C49BFF",
+      "#171326FF",
+      "#E8E3F2FF",
+      "#2F6F8FFF",
+      "#FFCD75FF"
+    ]
+  },
+  "craft": {
+    "score": 100,
+    "checks": [],
+    "metrics": {
+      "colours": 9,
+      "averageOpaquePixels": 263,
+      "coverage": 45.7,
+      "isolatedPixels": 0,
+      "maxIsolatedPerFrame": 0,
+      "contrast": 78.5,
+      "loopDelta": 0,
+      "averageFrameMs": 100
+    }
+  },
+  "assets": {
+    "image": "starlight-wizard-still.png",
+    "preview": "starlight-wizard-still-preview.png",
+    "sheet": "starlight-wizard-still-sheet.png",
+    "sheetJson": "starlight-wizard-still-sheet.json",
+    "oypx": "starlight-wizard-still.oypx"
+  },
+  "files": {
+    "image": "starlight-wizard-still.png",
+    "preview": "starlight-wizard-still-preview.png",
+    "gif": null,
+    "sheet": "starlight-wizard-still-sheet.png",
+    "sheetJson": "starlight-wizard-still-sheet.json",
+    "viewer": "starlight-wizard-still-viewer.html",
+    "oypx": "starlight-wizard-still.oypx"
+  },
+  "frames": [
+    {
+      "index": 0,
+      "label": "Artwork",
+      "durationMs": 100,
+      "gifDelayMs": 100,
+      "sheet": {
+        "index": 0,
+        "label": "Artwork",
+        "x": 0,
+        "y": 0,
+        "width": 24,
+        "height": 24,
+        "durationMs": 100
+      }
+    }
+  ]
+}

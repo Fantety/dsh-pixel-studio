@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/Fantety/dsh-pixel-studio/security/advisories/new
+    about: Please report security issues privately, not in a public issue.
+  - name: DeepSeek Harness
+    url: https://github.com/deepseek-ai/deepseek-harness
+    about: Upstream harness documentation and issues.

@@ -1,0 +1,193 @@
+{
+  "generator": "dsh-pixel-studio",
+  "version": "1.1.0",
+  "generatedAt": "2026-10-21T06:37:49.378Z",
+  "name": "native-ghost",
+  "kind": "animation",
+  "width": 16,
+  "height": 16,
+  "frameCount": 8,
+  "fps": 12.05,
+  "loop": 0,
+  "palette": {
+    "name": "sweetie16",
+    "label": "Sweetie 16",
+    "colors": [
+      "#1A1C2CFF",
+      "#5D275DFF",
+      "#B13E53FF",
+      "#EF7D57FF",
+      "#FFCD75FF",
+      "#A7F070FF",
+      "#38B764FF",
+      "#257179FF",
+      "#29366FFF",
+      "#3B5DC9FF",
+      "#41A6F6FF",
+      "#73EFF7FF",
+      "#F4F4F4FF",
+      "#94B0C2FF",
+      "#566C86FF",
+      "#333C57FF"
+    ]
+  },
+  "craft": {
+    "score": 100,
+    "checks": [],
+    "metrics": {
+      "colours": 4,
+      "averageOpaquePixels": 143,
+      "coverage": 55.9,
+      "isolatedPixels": 0,
+      "maxIsolatedPerFrame": 0,
+      "contrast": 35.1,
+      "loopDelta": 0,
+      "averageFrameMs": 83
+    }
+  },
+  "motion": {
+    "preset": "float",
+    "frames": 8,
+    "amplitude": 1,
+    "fps": 12
+  },
+  "assets": {
+    "image": "native-ghost.png",
+    "preview": "native-ghost-preview.png",
+    "sheet": "native-ghost-sheet.png",
+    "sheetJson": "native-ghost-sheet.json",
+    "gif": "native-ghost.gif",
+    "oypx": "native-ghost.oypx"
+  },
+  "files": {
+    "image": "native-ghost.png",
+    "preview": "native-ghost-preview.png",
+    "gif": "native-ghost.gif",
+    "sheet": "native-ghost-sheet.png",
+    "sheetJson": "native-ghost-sheet.json",
+    "viewer": null,
+    "oypx": "native-ghost.oypx"
+  },
+  "frames": [
+    {
+      "index": 0,
+      "label": "float 1",
+      "durationMs": 83,
+      "gifDelayMs": 80,
+      "sheet": {
+        "index": 0,
+        "label": "float 1",
+        "x": 0,
+        "y": 0,
+        "width": 16,
+        "height": 16,
+        "durationMs": 83
+      }
+    },
+    {
+      "index": 1,
+      "label": "float 2",
+      "durationMs": 83,
+      "gifDelayMs": 80,
+      "sheet": {
+        "index": 1,
+        "label": "float 2",
+        "x": 16,
+        "y": 0,
+        "width": 16,
+        "height": 16,
+        "durationMs": 83
+      }
+    },
+    {
+      "index": 2,
+      "label": "float 3",
+      "durationMs": 83,
+      "gifDelayMs": 80,
+      "sheet": {
+        "index": 2,
+        "label": "float 3",
+        "x": 32,
+        "y": 0,
+        "width": 16,
+        "height": 16,
+        "durationMs": 83
+      }
+    },
+    {
+      "index": 3,
+      "label": "float 4",
+      "durationMs": 83,
+      "gifDelayMs": 80,
+      "sheet": {
+        "index": 3,
+        "label": "float 4",
+        "x": 48,
+        "y": 0,
+        "width": 16,
+        "height": 16,
+        "durationMs": 83
+      }
+    },
+    {
+      "index": 4,
+      "label": "float 5",
+      "durationMs": 83,
+      "gifDelayMs": 80,
+      "sheet": {
+        "index": 4,
+        "label": "float 5",
+        "x": 64,
+        "y": 0,
+        "width": 16,
+        "height": 16,
+        "durationMs": 83
+      }
+    },
+    {
+      "index": 5,
+      "label": "float 6",
+      "durationMs": 83,
+      "gifDelayMs": 80,
+      "sheet": {
+        "index": 5,
+        "label": "float 6",
+        "x": 80,
+        "y": 0,
+        "width": 16,
+        "height": 16,
+        "durationMs": 83
+      }
+    },
+    {
+      "index": 6,
+      "label": "float 7",
+      "durationMs": 83,
+      "gifDelayMs": 80,
+      "sheet": {
+        "index": 6,
+        "label": "float 7",
+        "x": 96,
+        "y": 0,
+        "width": 16,
+        "height": 16,
+        "durationMs": 83
+      }
+    },
+    {
+      "index": 7,
+      "label": "float 8",
+      "durationMs": 83,
+      "gifDelayMs": 80,
+      "sheet": {
+        "index": 7,
+        "label": "float 8",
+        "x": 112,
+        "y": 0,
+        "width": 16,
+        "height": 16,
+        "durationMs": 83
+      }
+    }
+  ]
+}

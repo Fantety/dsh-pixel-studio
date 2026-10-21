@@ -1,0 +1,297 @@
+{
+  "format": "oypx",
+  "version": 2,
+  "document": {
+    "id": "doc_native-ghost",
+    "name": "native-ghost",
+    "width": 16,
+    "height": 16,
+    "colorMode": "rgba8",
+    "background": "transparent",
+    "activePaletteId": "pixel-studio",
+    "createdAt": "2026-10-21T06:37:49.376Z",
+    "modifiedAt": "2026-10-21T06:37:49.376Z"
+  },
+  "palettes": [
+    {
+      "id": "pixel-studio",
+      "name": "Sweetie 16",
+      "colors": [
+        {
+          "id": "p0",
+          "hex": "#1C1C31FF",
+          "name": "Colour 1"
+        },
+        {
+          "id": "p1",
+          "hex": "#41A6F6FF",
+          "name": "Colour 2"
+        },
+        {
+          "id": "p2",
+          "hex": "#00000055",
+          "name": "Colour 3"
+        },
+        {
+          "id": "p3",
+          "hex": "#3B5DC9FF",
+          "name": "Colour 4"
+        }
+      ]
+    }
+  ],
+  "timeline": {
+    "fps": 12,
+    "loop": "loop",
+    "frames": [
+      {
+        "id": "f0",
+        "index": 0,
+        "durationMs": 83,
+        "tagIds": []
+      },
+      {
+        "id": "f1",
+        "index": 1,
+        "durationMs": 83,
+        "tagIds": []
+      },
+      {
+        "id": "f2",
+        "index": 2,
+        "durationMs": 83,
+        "tagIds": []
+      },
+      {
+        "id": "f3",
+        "index": 3,
+        "durationMs": 83,
+        "tagIds": []
+      },
+      {
+        "id": "f4",
+        "index": 4,
+        "durationMs": 83,
+        "tagIds": []
+      },
+      {
+        "id": "f5",
+        "index": 5,
+        "durationMs": 83,
+        "tagIds": []
+      },
+      {
+        "id": "f6",
+        "index": 6,
+        "durationMs": 83,
+        "tagIds": []
+      },
+      {
+        "id": "f7",
+        "index": 7,
+        "durationMs": 83,
+        "tagIds": []
+      }
+    ],
+    "tags": []
+  },
+  "revision": 0,
+  "layers": [
+    {
+      "id": "layer_art",
+      "name": "Artwork",
+      "type": "raster",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "cels": [
+        {
+          "frameId": "f0",
+          "encoding": "rle-row",
+          "rows": [
+            ".*16",
+            ".*5 #1C1C31FF*5 .*6",
+            ".*4 #1C1C31FF #41A6F6FF*5 #1C1C31FF .*5",
+            ".*3 #1C1C31FF #41A6F6FF*7 #1C1C31FF .*4",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF .*3",
+            ".*2 #1C1C31FF #41A6F6FF #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*3 #3B5DC9FF*3 #41A6F6FF*3 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*2 #1C1C31FF #41A6F6FF*2 #1C1C31FF #41A6F6FF*3 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF #1C1C31FF #00000055 #1C1C31FF #41A6F6FF #1C1C31FF #00000055 #1C1C31FF #41A6F6FF #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF*2 #00000055*2 . #1C1C31FF #00000055*2 . #1C1C31FF*2 #00000055 .*2",
+            ".*3 #00000055*2 .*3 #00000055 .*3 #00000055*2 .*2",
+            ".*16"
+          ]
+        },
+        {
+          "frameId": "f1",
+          "encoding": "rle-row",
+          "rows": [
+            ".*16",
+            ".*5 #1C1C31FF*5 .*6",
+            ".*4 #1C1C31FF #41A6F6FF*5 #1C1C31FF .*5",
+            ".*3 #1C1C31FF #41A6F6FF*7 #1C1C31FF .*4",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF .*3",
+            ".*2 #1C1C31FF #41A6F6FF #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*3 #3B5DC9FF*3 #41A6F6FF*3 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*2 #1C1C31FF #41A6F6FF*2 #1C1C31FF #41A6F6FF*3 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF #1C1C31FF #00000055 #1C1C31FF #41A6F6FF #1C1C31FF #00000055 #1C1C31FF #41A6F6FF #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF*2 #00000055*2 . #1C1C31FF #00000055*2 . #1C1C31FF*2 #00000055 .*2",
+            ".*3 #00000055*2 .*3 #00000055 .*3 #00000055*2 .*2",
+            ".*16"
+          ]
+        },
+        {
+          "frameId": "f2",
+          "encoding": "rle-row",
+          "rows": [
+            ".*16",
+            ".*6 #1C1C31FF*5 .*5",
+            ".*5 #1C1C31FF #41A6F6FF*5 #1C1C31FF .*4",
+            ".*4 #1C1C31FF #41A6F6FF*7 #1C1C31FF .*3",
+            ".*3 #1C1C31FF #41A6F6FF*9 #1C1C31FF .*2",
+            ".*3 #1C1C31FF #41A6F6FF #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF #00000055 .",
+            ".*3 #1C1C31FF #41A6F6FF #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF #00000055 .",
+            ".*3 #1C1C31FF #41A6F6FF*9 #1C1C31FF #00000055 .",
+            ".*3 #1C1C31FF #41A6F6FF*3 #3B5DC9FF*3 #41A6F6FF*3 #1C1C31FF #00000055 .",
+            ".*3 #1C1C31FF #41A6F6FF*9 #1C1C31FF #00000055 .",
+            ".*3 #1C1C31FF #41A6F6FF*9 #1C1C31FF #00000055 .",
+            ".*3 #1C1C31FF #41A6F6FF*2 #1C1C31FF #41A6F6FF*2 #1C1C31FF #41A6F6FF*3 #1C1C31FF #00000055 .",
+            ".*3 #1C1C31FF #41A6F6FF #1C1C31FF #00000055 #1C1C31FF #41A6F6FF #1C1C31FF #00000055 #1C1C31FF #41A6F6FF #1C1C31FF #00000055 .",
+            ".*3 #1C1C31FF*2 #00000055*2 . #1C1C31FF #00000055*2 . #1C1C31FF*2 #00000055 .",
+            ".*4 #00000055*2 .*3 #00000055 .*3 #00000055*2 .",
+            ".*16"
+          ]
+        },
+        {
+          "frameId": "f3",
+          "encoding": "rle-row",
+          "rows": [
+            ".*5 #1C1C31FF*5 .*6",
+            ".*4 #1C1C31FF #41A6F6FF*5 #1C1C31FF .*5",
+            ".*3 #1C1C31FF #41A6F6FF*7 #1C1C31FF .*4",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF .*3",
+            ".*2 #1C1C31FF #41A6F6FF #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*3 #3B5DC9FF*3 #41A6F6FF*3 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*2 #1C1C31FF #41A6F6FF*2 #1C1C31FF #41A6F6FF*3 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF #1C1C31FF #00000055 #1C1C31FF #41A6F6FF #1C1C31FF #00000055 #1C1C31FF #41A6F6FF #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF*2 #00000055*2 . #1C1C31FF #00000055*2 . #1C1C31FF*2 #00000055 .*2",
+            ".*3 #00000055*2 .*3 #00000055 .*3 #00000055*2 .*2",
+            ".*16",
+            ".*16"
+          ]
+        },
+        {
+          "frameId": "f4",
+          "encoding": "rle-row",
+          "rows": [
+            ".*5 #1C1C31FF*5 .*6",
+            ".*4 #1C1C31FF #41A6F6FF*5 #1C1C31FF .*5",
+            ".*3 #1C1C31FF #41A6F6FF*7 #1C1C31FF .*4",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF .*3",
+            ".*2 #1C1C31FF #41A6F6FF #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*3 #3B5DC9FF*3 #41A6F6FF*3 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*2 #1C1C31FF #41A6F6FF*2 #1C1C31FF #41A6F6FF*3 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF #1C1C31FF #00000055 #1C1C31FF #41A6F6FF #1C1C31FF #00000055 #1C1C31FF #41A6F6FF #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF*2 #00000055*2 . #1C1C31FF #00000055*2 . #1C1C31FF*2 #00000055 .*2",
+            ".*3 #00000055*2 .*3 #00000055 .*3 #00000055*2 .*2",
+            ".*16",
+            ".*16"
+          ]
+        },
+        {
+          "frameId": "f5",
+          "encoding": "rle-row",
+          "rows": [
+            ".*5 #1C1C31FF*5 .*6",
+            ".*4 #1C1C31FF #41A6F6FF*5 #1C1C31FF .*5",
+            ".*3 #1C1C31FF #41A6F6FF*7 #1C1C31FF .*4",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF .*3",
+            ".*2 #1C1C31FF #41A6F6FF #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*3 #3B5DC9FF*3 #41A6F6FF*3 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*2 #1C1C31FF #41A6F6FF*2 #1C1C31FF #41A6F6FF*3 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF #1C1C31FF #00000055 #1C1C31FF #41A6F6FF #1C1C31FF #00000055 #1C1C31FF #41A6F6FF #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF*2 #00000055*2 . #1C1C31FF #00000055*2 . #1C1C31FF*2 #00000055 .*2",
+            ".*3 #00000055*2 .*3 #00000055 .*3 #00000055*2 .*2",
+            ".*16",
+            ".*16"
+          ]
+        },
+        {
+          "frameId": "f6",
+          "encoding": "rle-row",
+          "rows": [
+            ".*5 #1C1C31FF*5 .*6",
+            ".*4 #1C1C31FF #41A6F6FF*5 #1C1C31FF .*5",
+            ".*3 #1C1C31FF #41A6F6FF*7 #1C1C31FF .*4",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF .*3",
+            ".*2 #1C1C31FF #41A6F6FF #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*3 #3B5DC9FF*3 #41A6F6FF*3 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*2 #1C1C31FF #41A6F6FF*2 #1C1C31FF #41A6F6FF*3 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF #1C1C31FF #00000055 #1C1C31FF #41A6F6FF #1C1C31FF #00000055 #1C1C31FF #41A6F6FF #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF*2 #00000055*2 . #1C1C31FF #00000055*2 . #1C1C31FF*2 #00000055 .*2",
+            ".*3 #00000055*2 .*3 #00000055 .*3 #00000055*2 .*2",
+            ".*16",
+            ".*16"
+          ]
+        },
+        {
+          "frameId": "f7",
+          "encoding": "rle-row",
+          "rows": [
+            ".*16",
+            ".*5 #1C1C31FF*5 .*6",
+            ".*4 #1C1C31FF #41A6F6FF*5 #1C1C31FF .*5",
+            ".*3 #1C1C31FF #41A6F6FF*7 #1C1C31FF .*4",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF .*3",
+            ".*2 #1C1C31FF #41A6F6FF #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF*2 #41A6F6FF*2 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*3 #3B5DC9FF*3 #41A6F6FF*3 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*9 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF*2 #1C1C31FF #41A6F6FF*2 #1C1C31FF #41A6F6FF*3 #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF #41A6F6FF #1C1C31FF #00000055 #1C1C31FF #41A6F6FF #1C1C31FF #00000055 #1C1C31FF #41A6F6FF #1C1C31FF #00000055 .*2",
+            ".*2 #1C1C31FF*2 #00000055*2 . #1C1C31FF #00000055*2 . #1C1C31FF*2 #00000055 .*2",
+            ".*3 #00000055*2 .*3 #00000055 .*3 #00000055*2 .*2",
+            ".*16"
+          ]
+        }
+      ]
+    }
+  ],
+  "exportPresets": [],
+  "extensions": {
+    "generatedBy": "dsh-pixel-studio",
+    "generatedAt": "2026-10-21T06:37:49.376Z"
+  }
+}

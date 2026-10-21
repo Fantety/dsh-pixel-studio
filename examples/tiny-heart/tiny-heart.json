@@ -1,0 +1,69 @@
+{
+  "generator": "dsh-pixel-studio",
+  "version": "1.1.0",
+  "generatedAt": "2026-10-21T06:37:49.354Z",
+  "name": "tiny-heart",
+  "kind": "art",
+  "width": 8,
+  "height": 8,
+  "frameCount": 1,
+  "fps": 1,
+  "loop": 0,
+  "palette": {
+    "name": "legend",
+    "label": "Legend",
+    "colors": [
+      "#3B0D1AFF",
+      "#EF4B6BFF",
+      "#FF9FB2FF",
+      "#FFE6EAFF"
+    ]
+  },
+  "craft": {
+    "score": 100,
+    "checks": [],
+    "metrics": {
+      "colours": 5,
+      "averageOpaquePixels": 57,
+      "coverage": 89.1,
+      "isolatedPixels": 0,
+      "maxIsolatedPerFrame": 0,
+      "contrast": 49.3,
+      "loopDelta": 0,
+      "averageFrameMs": 100
+    }
+  },
+  "assets": {
+    "image": "tiny-heart.png",
+    "preview": "tiny-heart-preview.png",
+    "sheet": "tiny-heart-sheet.png",
+    "sheetJson": "tiny-heart-sheet.json",
+    "oypx": "tiny-heart.oypx"
+  },
+  "files": {
+    "image": "tiny-heart.png",
+    "preview": "tiny-heart-preview.png",
+    "gif": null,
+    "sheet": "tiny-heart-sheet.png",
+    "sheetJson": "tiny-heart-sheet.json",
+    "viewer": "tiny-heart-viewer.html",
+    "oypx": "tiny-heart.oypx"
+  },
+  "frames": [
+    {
+      "index": 0,
+      "label": "Artwork",
+      "durationMs": 100,
+      "gifDelayMs": 100,
+      "sheet": {
+        "index": 0,
+        "label": "Artwork",
+        "x": 0,
+        "y": 0,
+        "width": 8,
+        "height": 8,
+        "durationMs": 100
+      }
+    }
+  ]
+}

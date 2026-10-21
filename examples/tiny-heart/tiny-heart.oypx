@@ -1,0 +1,98 @@
+{
+  "format": "oypx",
+  "version": 2,
+  "document": {
+    "id": "doc_tiny-heart",
+    "name": "tiny-heart",
+    "width": 8,
+    "height": 8,
+    "colorMode": "rgba8",
+    "background": "transparent",
+    "activePaletteId": "pixel-studio",
+    "createdAt": "2026-10-21T06:37:49.351Z",
+    "modifiedAt": "2026-10-21T06:37:49.351Z"
+  },
+  "palettes": [
+    {
+      "id": "pixel-studio",
+      "name": "Legend",
+      "colors": [
+        {
+          "id": "p0",
+          "hex": "#381022FF",
+          "name": "Colour 1"
+        },
+        {
+          "id": "p1",
+          "hex": "#3B0D1AFF",
+          "name": "Colour 2"
+        },
+        {
+          "id": "p2",
+          "hex": "#EF4B6BFF",
+          "name": "Colour 3"
+        },
+        {
+          "id": "p3",
+          "hex": "#FF9FB2FF",
+          "name": "Colour 4"
+        },
+        {
+          "id": "p4",
+          "hex": "#00000055",
+          "name": "Colour 5"
+        }
+      ]
+    }
+  ],
+  "timeline": {
+    "fps": 1,
+    "loop": "loop",
+    "frames": [
+      {
+        "id": "f0",
+        "index": 0,
+        "durationMs": 100,
+        "tagIds": []
+      }
+    ],
+    "tags": []
+  },
+  "revision": 0,
+  "layers": [
+    {
+      "id": "layer_art",
+      "name": "Artwork",
+      "type": "raster",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "cels": [
+        {
+          "frameId": "f0",
+          "encoding": "rle-row",
+          "rows": [
+            "#381022FF #3B0D1AFF*2 #381022FF*2 #3B0D1AFF*2 #381022FF",
+            "#3B0D1AFF #EF4B6BFF*2 #3B0D1AFF*2 #EF4B6BFF*2 #3B0D1AFF",
+            "#3B0D1AFF #EF4B6BFF #FF9FB2FF #EF4B6BFF*4 #3B0D1AFF",
+            "#3B0D1AFF #EF4B6BFF*6 #3B0D1AFF",
+            "#381022FF #3B0D1AFF #EF4B6BFF*4 #3B0D1AFF #381022FF",
+            ". #381022FF #3B0D1AFF #EF4B6BFF*2 #3B0D1AFF #381022FF #00000055",
+            ".*2 #381022FF #3B0D1AFF*2 #381022FF #00000055*2",
+            ".*3 #381022FF*2 #00000055*2 ."
+          ]
+        }
+      ]
+    }
+  ],
+  "exportPresets": [],
+  "extensions": {
+    "generatedBy": "dsh-pixel-studio",
+    "generatedAt": "2026-10-21T06:37:49.351Z"
+  }
+}

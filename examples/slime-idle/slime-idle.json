@@ -1,0 +1,193 @@
+{
+  "generator": "dsh-pixel-studio",
+  "version": "1.1.0",
+  "generatedAt": "2026-10-21T06:37:49.340Z",
+  "name": "slime-idle",
+  "kind": "animation",
+  "width": 16,
+  "height": 16,
+  "frameCount": 8,
+  "fps": 10,
+  "loop": 0,
+  "palette": {
+    "name": "sweetie16",
+    "label": "Sweetie 16",
+    "colors": [
+      "#1A1C2CFF",
+      "#5D275DFF",
+      "#B13E53FF",
+      "#EF7D57FF",
+      "#FFCD75FF",
+      "#A7F070FF",
+      "#38B764FF",
+      "#257179FF",
+      "#29366FFF",
+      "#3B5DC9FF",
+      "#41A6F6FF",
+      "#73EFF7FF",
+      "#F4F4F4FF",
+      "#94B0C2FF",
+      "#566C86FF",
+      "#333C57FF"
+    ]
+  },
+  "craft": {
+    "score": 100,
+    "checks": [],
+    "metrics": {
+      "colours": 3,
+      "averageOpaquePixels": 142,
+      "coverage": 55.5,
+      "isolatedPixels": 0,
+      "maxIsolatedPerFrame": 0,
+      "contrast": 47.9,
+      "loopDelta": 0,
+      "averageFrameMs": 100
+    }
+  },
+  "motion": {
+    "preset": "bob",
+    "frames": 8,
+    "amplitude": 3,
+    "fps": 10
+  },
+  "assets": {
+    "image": "slime-idle.png",
+    "preview": "slime-idle-preview.png",
+    "sheet": "slime-idle-sheet.png",
+    "sheetJson": "slime-idle-sheet.json",
+    "gif": "slime-idle.gif",
+    "oypx": "slime-idle.oypx"
+  },
+  "files": {
+    "image": "slime-idle.png",
+    "preview": "slime-idle-preview.png",
+    "gif": "slime-idle.gif",
+    "sheet": "slime-idle-sheet.png",
+    "sheetJson": "slime-idle-sheet.json",
+    "viewer": "slime-idle-viewer.html",
+    "oypx": "slime-idle.oypx"
+  },
+  "frames": [
+    {
+      "index": 0,
+      "label": "bob 1",
+      "durationMs": 100,
+      "gifDelayMs": 100,
+      "sheet": {
+        "index": 0,
+        "label": "bob 1",
+        "x": 0,
+        "y": 0,
+        "width": 16,
+        "height": 16,
+        "durationMs": 100
+      }
+    },
+    {
+      "index": 1,
+      "label": "bob 2",
+      "durationMs": 100,
+      "gifDelayMs": 100,
+      "sheet": {
+        "index": 1,
+        "label": "bob 2",
+        "x": 16,
+        "y": 0,
+        "width": 16,
+        "height": 16,
+        "durationMs": 100
+      }
+    },
+    {
+      "index": 2,
+      "label": "bob 3",
+      "durationMs": 100,
+      "gifDelayMs": 100,
+      "sheet": {
+        "index": 2,
+        "label": "bob 3",
+        "x": 32,
+        "y": 0,
+        "width": 16,
+        "height": 16,
+        "durationMs": 100
+      }
+    },
+    {
+      "index": 3,
+      "label": "bob 4",
+      "durationMs": 100,
+      "gifDelayMs": 100,
+      "sheet": {
+        "index": 3,
+        "label": "bob 4",
+        "x": 48,
+        "y": 0,
+        "width": 16,
+        "height": 16,
+        "durationMs": 100
+      }
+    },
+    {
+      "index": 4,
+      "label": "bob 5",
+      "durationMs": 100,
+      "gifDelayMs": 100,
+      "sheet": {
+        "index": 4,
+        "label": "bob 5",
+        "x": 64,
+        "y": 0,
+        "width": 16,
+        "height": 16,
+        "durationMs": 100
+      }
+    },
+    {
+      "index": 5,
+      "label": "bob 6",
+      "durationMs": 100,
+      "gifDelayMs": 100,
+      "sheet": {
+        "index": 5,
+        "label": "bob 6",
+        "x": 80,
+        "y": 0,
+        "width": 16,
+        "height": 16,
+        "durationMs": 100
+      }
+    },
+    {
+      "index": 6,
+      "label": "bob 7",
+      "durationMs": 100,
+      "gifDelayMs": 100,
+      "sheet": {
+        "index": 6,
+        "label": "bob 7",
+        "x": 96,
+        "y": 0,
+        "width": 16,
+        "height": 16,
+        "durationMs": 100
+      }
+    },
+    {
+      "index": 7,
+      "label": "bob 8",
+      "durationMs": 100,
+      "gifDelayMs": 100,
+      "sheet": {
+        "index": 7,
+        "label": "bob 8",
+        "x": 112,
+        "y": 0,
+        "width": 16,
+        "height": 16,
+        "durationMs": 100
+      }
+    }
+  ]
+}

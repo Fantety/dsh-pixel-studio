@@ -1,0 +1,66 @@
+{
+  "name": "dsh-pixel-studio",
+  "version": "1.1.0",
+  "description": "Native in-chat pixel art and pixel animation studio for DeepSeek Harness, with PNG/GIF, spritesheet and OYPX export.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-tool"
+      ]
+    }
+  },
+  "files": [
+    "lib",
+    "scripts",
+    "examples",
+    "test",
+    "docs",
+    "README.md",
+    "README.zh.md",
+    "CHANGELOG.md",
+    "THIRD_PARTY_NOTICES.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fantety/dsh-pixel-studio.git"
+  },
+  "homepage": "https://github.com/Fantety/dsh-pixel-studio#readme",
+  "bugs": {
+    "url": "https://github.com/Fantety/dsh-pixel-studio/issues"
+  },
+  "author": "Fantety",
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "pixel-art",
+    "pixel-animation",
+    "sprite",
+    "spritesheet",
+    "gif",
+    "oypx",
+    "canvas"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.2.1-rc.2 <0.3.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "check": "node --check lib/index.js && node --check lib/plugin.js && node --check lib/client.js",
+    "demo": "node scripts/make-demo.mjs",
+    "demo:showcase": "node scripts/make-showcase.mjs",
+    "prepublishOnly": "npm test"
+  }
+}

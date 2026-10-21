@@ -1,0 +1,86 @@
+{
+  "format": "dsh-pixel-studio-spritesheet",
+  "version": 1,
+  "width": 128,
+  "height": 16,
+  "frameWidth": 16,
+  "frameHeight": 16,
+  "columns": 8,
+  "rows": 1,
+  "padding": 0,
+  "gutter": 0,
+  "frames": [
+    {
+      "index": 0,
+      "label": "bob 1",
+      "x": 0,
+      "y": 0,
+      "width": 16,
+      "height": 16,
+      "durationMs": 100
+    },
+    {
+      "index": 1,
+      "label": "bob 2",
+      "x": 16,
+      "y": 0,
+      "width": 16,
+      "height": 16,
+      "durationMs": 100
+    },
+    {
+      "index": 2,
+      "label": "bob 3",
+      "x": 32,
+      "y": 0,
+      "width": 16,
+      "height": 16,
+      "durationMs": 100
+    },
+    {
+      "index": 3,
+      "label": "bob 4",
+      "x": 48,
+      "y": 0,
+      "width": 16,
+      "height": 16,
+      "durationMs": 100
+    },
+    {
+      "index": 4,
+      "label": "bob 5",
+      "x": 64,
+      "y": 0,
+      "width": 16,
+      "height": 16,
+      "durationMs": 100
+    },
+    {
+      "index": 5,
+      "label": "bob 6",
+      "x": 80,
+      "y": 0,
+      "width": 16,
+      "height": 16,
+      "durationMs": 100
+    },
+    {
+      "index": 6,
+      "label": "bob 7",
+      "x": 96,
+      "y": 0,
+      "width": 16,
+      "height": 16,
+      "durationMs": 100
+    },
+    {
+      "index": 7,
+      "label": "bob 8",
+      "x": 112,
+      "y": 0,
+      "width": 16,
+      "height": 16,
+      "durationMs": 100
+    }
+  ]
+}

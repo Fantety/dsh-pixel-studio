@@ -1,0 +1,185 @@
+{
+  "generator": "dsh-pixel-studio",
+  "version": "1.1.0",
+  "generatedAt": "2026-10-21T06:37:49.605Z",
+  "name": "starlight-wizard",
+  "kind": "animation",
+  "width": 24,
+  "height": 24,
+  "frameCount": 8,
+  "fps": 10,
+  "loop": 0,
+  "palette": {
+    "name": "legend",
+    "label": "Legend",
+    "colors": [
+      "#1A1626FF",
+      "#3D2C8DFF",
+      "#8B5CF6FF",
+      "#F2C49BFF",
+      "#171326FF",
+      "#E8E3F2FF",
+      "#2F6F8FFF",
+      "#FFCD75FF"
+    ]
+  },
+  "craft": {
+    "score": 100,
+    "checks": [],
+    "metrics": {
+      "colours": 9,
+      "averageOpaquePixels": 268,
+      "coverage": 46.5,
+      "isolatedPixels": 0,
+      "maxIsolatedPerFrame": 0,
+      "contrast": 78.5,
+      "loopDelta": 19.4,
+      "averageFrameMs": 100
+    }
+  },
+  "motion": {
+    "preset": "float",
+    "frames": 8,
+    "amplitude": 3,
+    "fps": 10
+  },
+  "assets": {
+    "image": "starlight-wizard.png",
+    "preview": "starlight-wizard-preview.png",
+    "sheet": "starlight-wizard-sheet.png",
+    "sheetJson": "starlight-wizard-sheet.json",
+    "gif": "starlight-wizard.gif",
+    "oypx": "starlight-wizard.oypx"
+  },
+  "files": {
+    "image": "starlight-wizard.png",
+    "preview": "starlight-wizard-preview.png",
+    "gif": "starlight-wizard.gif",
+    "sheet": "starlight-wizard-sheet.png",
+    "sheetJson": "starlight-wizard-sheet.json",
+    "viewer": "starlight-wizard-viewer.html",
+    "oypx": "starlight-wizard.oypx"
+  },
+  "frames": [
+    {
+      "index": 0,
+      "label": "float 1",
+      "durationMs": 100,
+      "gifDelayMs": 100,
+      "sheet": {
+        "index": 0,
+        "label": "float 1",
+        "x": 0,
+        "y": 0,
+        "width": 24,
+        "height": 24,
+        "durationMs": 100
+      }
+    },
+    {
+      "index": 1,
+      "label": "float 2",
+      "durationMs": 100,
+      "gifDelayMs": 100,
+      "sheet": {
+        "index": 1,
+        "label": "float 2",
+        "x": 24,
+        "y": 0,
+        "width": 24,
+        "height": 24,
+        "durationMs": 100
+      }
+    },
+    {
+      "index": 2,
+      "label": "float 3",
+      "durationMs": 100,
+      "gifDelayMs": 100,
+      "sheet": {
+        "index": 2,
+        "label": "float 3",
+        "x": 48,
+        "y": 0,
+        "width": 24,
+        "height": 24,
+        "durationMs": 100
+      }
+    },
+    {
+      "index": 3,
+      "label": "float 4",
+      "durationMs": 100,
+      "gifDelayMs": 100,
+      "sheet": {
+        "index": 3,
+        "label": "float 4",
+        "x": 72,
+        "y": 0,
+        "width": 24,
+        "height": 24,
+        "durationMs": 100
+      }
+    },
+    {
+      "index": 4,
+      "label": "float 5",
+      "durationMs": 100,
+      "gifDelayMs": 100,
+      "sheet": {
+        "index": 4,
+        "label": "float 5",
+        "x": 96,
+        "y": 0,
+        "width": 24,
+        "height": 24,
+        "durationMs": 100
+      }
+    },
+    {
+      "index": 5,
+      "label": "float 6",
+      "durationMs": 100,
+      "gifDelayMs": 100,
+      "sheet": {
+        "index": 5,
+        "label": "float 6",
+        "x": 120,
+        "y": 0,
+        "width": 24,
+        "height": 24,
+        "durationMs": 100
+      }
+    },
+    {
+      "index": 6,
+      "label": "float 7",
+      "durationMs": 100,
+      "gifDelayMs": 100,
+      "sheet": {
+        "index": 6,
+        "label": "float 7",
+        "x": 144,
+        "y": 0,
+        "width": 24,
+        "height": 24,
+        "durationMs": 100
+      }
+    },
+    {
+      "index": 7,
+      "label": "float 8",
+      "durationMs": 100,
+      "gifDelayMs": 100,
+      "sheet": {
+        "index": 7,
+        "label": "float 8",
+        "x": 168,
+        "y": 0,
+        "width": 24,
+        "height": 24,
+        "durationMs": 100
+      }
+    }
+  ]
+}

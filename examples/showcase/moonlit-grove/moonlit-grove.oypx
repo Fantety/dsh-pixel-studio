@@ -1,0 +1,172 @@
+{
+  "format": "oypx",
+  "version": 2,
+  "document": {
+    "id": "doc_moonlit-grove",
+    "name": "moonlit-grove",
+    "width": 32,
+    "height": 32,
+    "colorMode": "rgba8",
+    "background": "transparent",
+    "activePaletteId": "pixel-studio",
+    "createdAt": "2026-10-21T06:37:49.653Z",
+    "modifiedAt": "2026-10-21T06:37:49.653Z"
+  },
+  "palettes": [
+    {
+      "id": "pixel-studio",
+      "name": "Legend",
+      "colors": [
+        {
+          "id": "p0",
+          "hex": "#0B1026FF",
+          "name": "Colour 1"
+        },
+        {
+          "id": "p1",
+          "hex": "#94B0C2FF",
+          "name": "Colour 2"
+        },
+        {
+          "id": "p2",
+          "hex": "#F4F4F4FF",
+          "name": "Colour 3"
+        },
+        {
+          "id": "p3",
+          "hex": "#D9A066FF",
+          "name": "Colour 4"
+        },
+        {
+          "id": "p4",
+          "hex": "#FFF3B0FF",
+          "name": "Colour 5"
+        },
+        {
+          "id": "p5",
+          "hex": "#1A2E1AFF",
+          "name": "Colour 6"
+        },
+        {
+          "id": "p6",
+          "hex": "#38B764FF",
+          "name": "Colour 7"
+        },
+        {
+          "id": "p7",
+          "hex": "#A7F070FF",
+          "name": "Colour 8"
+        },
+        {
+          "id": "p8",
+          "hex": "#141A3AFF",
+          "name": "Colour 9"
+        },
+        {
+          "id": "p9",
+          "hex": "#1E3A34FF",
+          "name": "Colour 10"
+        },
+        {
+          "id": "p10",
+          "hex": "#8F563BFF",
+          "name": "Colour 11"
+        },
+        {
+          "id": "p11",
+          "hex": "#2F5D50FF",
+          "name": "Colour 12"
+        },
+        {
+          "id": "p12",
+          "hex": "#0B1020FF",
+          "name": "Colour 13"
+        },
+        {
+          "id": "p13",
+          "hex": "#B13E53FF",
+          "name": "Colour 14"
+        },
+        {
+          "id": "p14",
+          "hex": "#EF4B6BFF",
+          "name": "Colour 15"
+        }
+      ]
+    }
+  ],
+  "timeline": {
+    "fps": 1,
+    "loop": "loop",
+    "frames": [
+      {
+        "id": "f0",
+        "index": 0,
+        "durationMs": 100,
+        "tagIds": []
+      }
+    ],
+    "tags": []
+  },
+  "revision": 0,
+  "layers": [
+    {
+      "id": "layer_art",
+      "name": "Artwork",
+      "type": "raster",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "cels": [
+        {
+          "frameId": "f0",
+          "encoding": "rle-row",
+          "rows": [
+            "#0B1026FF*32",
+            "#0B1026FF*8 #94B0C2FF #0B1026FF*19 #94B0C2FF #0B1026FF*3",
+            "#0B1026FF*18 #F4F4F4FF #0B1026FF*5 #D9A066FF*3 #0B1026FF*5",
+            "#0B1026FF*3 #F4F4F4FF #0B1026FF*19 #D9A066FF #FFF3B0FF*3 #D9A066FF #0B1026FF*4",
+            "#0B1026FF*14 #94B0C2FF #0B1026FF*7 #D9A066FF #FFF3B0FF*5 #D9A066FF #0B1026FF*3",
+            "#0B1026FF*21 #D9A066FF #FFF3B0FF*7 #D9A066FF #0B1026FF*2",
+            "#0B1026FF*21 #D9A066FF #FFF3B0FF*3 #D9A066FF*5 #0B1026FF*2",
+            "#0B1026FF*21 #D9A066FF #FFF3B0FF*3 #D9A066FF*5 #0B1026FF*2",
+            "#0B1026FF*22 #D9A066FF #FFF3B0FF*2 #D9A066FF*4 #0B1026FF #F4F4F4FF #0B1026FF",
+            "#0B1026FF*11 #1A2E1AFF*2 #0B1026FF*7 #94B0C2FF #0B1026FF*2 #D9A066FF #FFF3B0FF #D9A066FF*3 #0B1026FF*4",
+            "#0B1026FF*9 #1A2E1AFF*2 #38B764FF*2 #1A2E1AFF*2 #0B1026FF*9 #D9A066FF*3 #0B1026FF*5",
+            "#0B1026FF*2 #94B0C2FF #0B1026FF*5 #1A2E1AFF #38B764FF*6 #1A2E1AFF #0B1026FF*16",
+            "#0B1026FF*7 #1A2E1AFF #38B764FF*2 #A7F070FF #38B764FF*5 #1A2E1AFF #0B1026FF*15",
+            "#0B1026FF*6 #1A2E1AFF #38B764FF*10 #1A2E1AFF #0B1026FF*14",
+            "#0B1026FF*6 #1A2E1AFF #38B764FF*10 #1A2E1AFF #0B1026FF*8 #94B0C2FF #0B1026FF*5",
+            "#0B1026FF*5 #1A2E1AFF #38B764FF*12 #1A2E1AFF #0B1026FF*13",
+            "#0B1026FF*5 #1A2E1AFF #38B764FF*12 #1A2E1AFF #0B1026FF*13",
+            "#0B1026FF*6 #1A2E1AFF #38B764FF*10 #1A2E1AFF #0B1026FF*14",
+            "#141A3AFF*7 #1A2E1AFF #38B764FF*8 #1A2E1AFF #141A3AFF*15",
+            "#141A3AFF*9 #1A2E1AFF #38B764FF*4 #1A2E1AFF #141A3AFF*17",
+            "#141A3AFF*11 #1A2E1AFF*2 #141A3AFF*8 #1A2E1AFF*4 #141A3AFF*6 #1E3A34FF",
+            "#141A3AFF*11 #8F563BFF*2 #1E3A34FF*6 #1A2E1AFF*2 #38B764FF*4 #1A2E1AFF*2 #141A3AFF*3 #1E3A34FF #2F5D50FF",
+            "#1E3A34FF #0B1026FF*9 #8F563BFF*4 #2F5D50FF*4 #1A2E1AFF #38B764FF*8 #1A2E1AFF #1E3A34FF*2 #2F5D50FF*2",
+            "#2F5D50FF #1E3A34FF #0B1026FF*7 #1A2E1AFF*6 #2F5D50FF*2 #1A2E1AFF #38B764FF*10 #1A2E1AFF #2F5D50FF*3",
+            "#2F5D50FF*2 #1E3A34FF #0B1026FF*6 #1E3A34FF*2 #2F5D50FF*6 #1A2E1AFF #38B764FF #0B1020FF*2 #38B764FF*4 #0B1020FF*2 #38B764FF #1A2E1AFF #2F5D50FF*3",
+            "#2F5D50FF*3 #1E3A34FF*3 #0B1026FF #1E3A34FF*2 #2F5D50FF*8 #1A2E1AFF #38B764FF #0B1020FF*2 #38B764FF*4 #0B1020FF*2 #38B764FF #1A2E1AFF #2F5D50FF*3",
+            "#2F5D50FF*3 #B13E53FF #2F5D50FF*2 #1E3A34FF #2F5D50FF*10 #1A2E1AFF #38B764FF*11 #1A2E1AFF #2F5D50FF*2",
+            "#2F5D50FF*3 #EF4B6BFF #2F5D50FF*11 #B13E53FF #2F5D50FF #1A2E1AFF #38B764FF*2 #A7F070FF #38B764FF*6 #A7F070FF #38B764FF #1A2E1AFF #2F5D50FF*2",
+            "#2F5D50FF*6 #B13E53FF #2F5D50FF*8 #EF4B6BFF #2F5D50FF*2 #1A2E1AFF #38B764FF*10 #1A2E1AFF #2F5D50FF*2",
+            "#2F5D50FF*6 #EF4B6BFF #2F5D50FF*12 #1A2E1AFF*10 #2F5D50FF*3",
+            "#2F5D50FF*28 #EF4B6BFF #2F5D50FF*3",
+            "#2F5D50FF*32"
+          ]
+        }
+      ]
+    }
+  ],
+  "exportPresets": [],
+  "extensions": {
+    "generatedBy": "dsh-pixel-studio",
+    "generatedAt": "2026-10-21T06:37:49.653Z"
+  }
+}

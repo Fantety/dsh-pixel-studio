@@ -1,0 +1,134 @@
+{
+  "format": "oypx",
+  "version": 2,
+  "document": {
+    "id": "doc_starlight-wizard-still",
+    "name": "starlight-wizard-still",
+    "width": 24,
+    "height": 24,
+    "colorMode": "rgba8",
+    "background": "transparent",
+    "activePaletteId": "pixel-studio",
+    "createdAt": "2026-10-21T06:37:49.628Z",
+    "modifiedAt": "2026-10-21T06:37:49.628Z"
+  },
+  "palettes": [
+    {
+      "id": "pixel-studio",
+      "name": "Legend",
+      "colors": [
+        {
+          "id": "p0",
+          "hex": "#1A1626FF",
+          "name": "Colour 1"
+        },
+        {
+          "id": "p1",
+          "hex": "#3D2C8DFF",
+          "name": "Colour 2"
+        },
+        {
+          "id": "p2",
+          "hex": "#8B5CF6FF",
+          "name": "Colour 3"
+        },
+        {
+          "id": "p3",
+          "hex": "#00000055",
+          "name": "Colour 4"
+        },
+        {
+          "id": "p4",
+          "hex": "#F2C49BFF",
+          "name": "Colour 5"
+        },
+        {
+          "id": "p5",
+          "hex": "#171326FF",
+          "name": "Colour 6"
+        },
+        {
+          "id": "p6",
+          "hex": "#E8E3F2FF",
+          "name": "Colour 7"
+        },
+        {
+          "id": "p7",
+          "hex": "#2F6F8FFF",
+          "name": "Colour 8"
+        },
+        {
+          "id": "p8",
+          "hex": "#FFCD75FF",
+          "name": "Colour 9"
+        }
+      ]
+    }
+  ],
+  "timeline": {
+    "fps": 1,
+    "loop": "loop",
+    "frames": [
+      {
+        "id": "f0",
+        "index": 0,
+        "durationMs": 100,
+        "tagIds": []
+      }
+    ],
+    "tags": []
+  },
+  "revision": 0,
+  "layers": [
+    {
+      "id": "layer_art",
+      "name": "Artwork",
+      "type": "raster",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "cels": [
+        {
+          "frameId": "f0",
+          "encoding": "rle-row",
+          "rows": [
+            ".*24",
+            ".*11 #1A1626FF*2 .*11",
+            ".*10 #1A1626FF #3D2C8DFF*2 #1A1626FF .*10",
+            ".*9 #1A1626FF #3D2C8DFF #8B5CF6FF*2 #3D2C8DFF #1A1626FF .*9",
+            ".*8 #1A1626FF #3D2C8DFF #8B5CF6FF*4 #3D2C8DFF #1A1626FF .*8",
+            ".*7 #1A1626FF #3D2C8DFF #8B5CF6FF*6 #3D2C8DFF #1A1626FF .*7",
+            ".*6 #1A1626FF #3D2C8DFF #8B5CF6FF*8 #3D2C8DFF #1A1626FF .*6",
+            ".*5 #1A1626FF #3D2C8DFF*12 #1A1626FF .*5",
+            ".*4 #1A1626FF*16 .*4",
+            ".*5 #00000055*2 #1A1626FF #F2C49BFF*8 #1A1626FF #00000055*4 .*3",
+            ".*7 #1A1626FF #F2C49BFF*2 #171326FF #F2C49BFF*2 #171326FF #F2C49BFF*2 #1A1626FF #00000055 .*6",
+            ".*7 #1A1626FF #F2C49BFF*8 #1A1626FF #00000055 .*6",
+            ".*7 #1A1626FF #F2C49BFF*8 #1A1626FF #00000055 .*6",
+            ".*8 #1A1626FF #E8E3F2FF*6 #1A1626FF #00000055*2 .*6",
+            ".*7 #1A1626FF #E8E3F2FF*8 #1A1626FF .*7",
+            ".*6 #1A1626FF #E8E3F2FF*10 #1A1626FF .*6",
+            ".*6 #1A1626FF #E8E3F2FF*10 #1A1626FF #00000055 .*5",
+            ".*7 #1A1626FF #E8E3F2FF*8 #1A1626FF #00000055*2 .*5",
+            ".*8 #1A1626FF #2F6F8FFF*7 #1A1626FF #00000055 .*6",
+            ".*7 #1A1626FF #2F6F8FFF*8 #1A1626FF #00000055 .*6",
+            ".*5 #1A1626FF #2F6F8FFF*12 #1A1626FF .*5",
+            ".*4 #1A1626FF #2F6F8FFF*4 #FFCD75FF*4 #2F6F8FFF*6 #1A1626FF .*4",
+            ".*4 #1A1626FF #2F6F8FFF*14 #1A1626FF #00000055 .*3",
+            ".*4 #1A1626FF*16 #00000055 .*3"
+          ]
+        }
+      ]
+    }
+  ],
+  "exportPresets": [],
+  "extensions": {
+    "generatedBy": "dsh-pixel-studio",
+    "generatedAt": "2026-10-21T06:37:49.628Z"
+  }
+}

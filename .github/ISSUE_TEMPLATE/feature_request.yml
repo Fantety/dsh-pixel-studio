@@ -1,0 +1,37 @@
+name: Feature request
+description: Suggest an improvement to the pixel studio plugin
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please describe the user-visible workflow first, then any API or UI
+        details. Large changes may need a short design discussion before code.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is hard to do today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: How should generation, the native canvas, or export behave?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: false
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and compatibility
+      description: Does this change tool schemas, OYPX/GIF output, the client bundle, or DSH version support?
+    validations:
+      required: false

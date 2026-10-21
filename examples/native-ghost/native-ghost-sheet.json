@@ -1,0 +1,86 @@
+{
+  "format": "dsh-pixel-studio-spritesheet",
+  "version": 1,
+  "width": 128,
+  "height": 16,
+  "frameWidth": 16,
+  "frameHeight": 16,
+  "columns": 8,
+  "rows": 1,
+  "padding": 0,
+  "gutter": 0,
+  "frames": [
+    {
+      "index": 0,
+      "label": "float 1",
+      "x": 0,
+      "y": 0,
+      "width": 16,
+      "height": 16,
+      "durationMs": 83
+    },
+    {
+      "index": 1,
+      "label": "float 2",
+      "x": 16,
+      "y": 0,
+      "width": 16,
+      "height": 16,
+      "durationMs": 83
+    },
+    {
+      "index": 2,
+      "label": "float 3",
+      "x": 32,
+      "y": 0,
+      "width": 16,
+      "height": 16,
+      "durationMs": 83
+    },
+    {
+      "index": 3,
+      "label": "float 4",
+      "x": 48,
+      "y": 0,
+      "width": 16,
+      "height": 16,
+      "durationMs": 83
+    },
+    {
+      "index": 4,
+      "label": "float 5",
+      "x": 64,
+      "y": 0,
+      "width": 16,
+      "height": 16,
+      "durationMs": 83
+    },
+    {
+      "index": 5,
+      "label": "float 6",
+      "x": 80,
+      "y": 0,
+      "width": 16,
+      "height": 16,
+      "durationMs": 83
+    },
+    {
+      "index": 6,
+      "label": "float 7",
+      "x": 96,
+      "y": 0,
+      "width": 16,
+      "height": 16,
+      "durationMs": 83
+    },
+    {
+      "index": 7,
+      "label": "float 8",
+      "x": 112,
+      "y": 0,
+      "width": 16,
+      "height": 16,
+      "durationMs": 83
+    }
+  ]
+}

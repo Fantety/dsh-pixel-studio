@@ -1,0 +1,80 @@
+{
+  "generator": "dsh-pixel-studio",
+  "version": "1.1.0",
+  "generatedAt": "2026-10-21T06:37:49.658Z",
+  "name": "moonlit-grove",
+  "kind": "art",
+  "width": 32,
+  "height": 32,
+  "frameCount": 1,
+  "fps": 1,
+  "loop": 0,
+  "palette": {
+    "name": "legend",
+    "label": "Legend",
+    "colors": [
+      "#0B1026FF",
+      "#141A3AFF",
+      "#FFF3B0FF",
+      "#D9A066FF",
+      "#F4F4F4FF",
+      "#94B0C2FF",
+      "#1E3A34FF",
+      "#2F5D50FF",
+      "#EF4B6BFF",
+      "#B13E53FF",
+      "#1A2E1AFF",
+      "#38B764FF",
+      "#A7F070FF",
+      "#8F563BFF",
+      "#0B1020FF"
+    ]
+  },
+  "craft": {
+    "score": 100,
+    "checks": [],
+    "metrics": {
+      "colours": 15,
+      "averageOpaquePixels": 1024,
+      "coverage": 100,
+      "isolatedPixels": 0,
+      "maxIsolatedPerFrame": 0,
+      "contrast": 89.9,
+      "loopDelta": 0,
+      "averageFrameMs": 100
+    }
+  },
+  "assets": {
+    "image": "moonlit-grove.png",
+    "preview": "moonlit-grove-preview.png",
+    "sheet": "moonlit-grove-sheet.png",
+    "sheetJson": "moonlit-grove-sheet.json",
+    "oypx": "moonlit-grove.oypx"
+  },
+  "files": {
+    "image": "moonlit-grove.png",
+    "preview": "moonlit-grove-preview.png",
+    "gif": null,
+    "sheet": "moonlit-grove-sheet.png",
+    "sheetJson": "moonlit-grove-sheet.json",
+    "viewer": "moonlit-grove-viewer.html",
+    "oypx": "moonlit-grove.oypx"
+  },
+  "frames": [
+    {
+      "index": 0,
+      "label": "Artwork",
+      "durationMs": 100,
+      "gifDelayMs": 100,
+      "sheet": {
+        "index": 0,
+        "label": "Artwork",
+        "x": 0,
+        "y": 0,
+        "width": 32,
+        "height": 32,
+        "durationMs": 100
+      }
+    }
+  ]
+}
