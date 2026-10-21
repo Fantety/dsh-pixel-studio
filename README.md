@@ -74,12 +74,13 @@ The package is a normal DSH plugin: host entry `lib/index.js`, client entry
 
 ### From GitHub via SSH
 
-```bash
-# 1. Install the package into the active profile.
-dsh plugin --profile desktop add "git+ssh://git@github.com/Fantety/dsh-pixel-studio.git"
+For a CLI-managed profile (for example `web`, `headless`, or a custom profile):
 
-# 2. Add the loader entry to the profile patch.
-#    ~/.dsh/profiles/desktop/cordis.patch.yml
+```bash
+# 1. Install the package into that profile.
+dsh plugin --profile <profile> add "git+ssh://git@github.com/Fantety/dsh-pixel-studio.git"
+
+# 2. Add the loader entry to ~/.dsh/profiles/<profile>/cordis.patch.yml
 ```
 
 ```yaml
@@ -88,13 +89,18 @@ dsh plugin --profile desktop add "git+ssh://git@github.com/Fantety/dsh-pixel-stu
       name: dsh-pixel-studio
 ```
 
+The `desktop` profile is managed by the Electron app, so the CLI deliberately
+rejects `dsh plugin --profile desktop`. Use the DSH Plugin Manager (or the
+desktop's bundled command runtime) for that profile, then add the same `insert`
+block.
+
 Reload the profile, then **refresh the Web GUI once** so the client bundle is
 loaded. If the tool card is still generic after a refresh, restart DSH.
 
 ### Local development link
 
 ```bash
-cd ~/.dsh/profiles/desktop
+cd ~/.dsh/profiles/<profile>
 pnpm add "link:/absolute/path/to/dsh-pixel-studio"
 ```
 

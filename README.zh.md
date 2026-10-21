@@ -37,9 +37,11 @@
 
 ## 安装
 
+对 CLI 管理的 profile（如 `web`、`headless` 或自定义 profile）：
+
 ```bash
 # 1) 通过 SSH 安装到 profile
-dsh plugin --profile desktop add "git+ssh://git@github.com/Fantety/dsh-pixel-studio.git"
+dsh plugin --profile <profile> add "git+ssh://git@github.com/Fantety/dsh-pixel-studio.git"
 
 # 2) 在 profile 的 cordis.patch.yml 追加：
 ```
@@ -50,13 +52,16 @@ dsh plugin --profile desktop add "git+ssh://git@github.com/Fantety/dsh-pixel-stu
       name: dsh-pixel-studio
 ```
 
+`desktop` profile 由 Electron 管理，CLI 会拒绝 `dsh plugin --profile desktop`；
+请使用 DSH 插件管理器或 Desktop 内置命令运行时安装，然后追加同样的 `insert`。
+
 重新加载 profile，然后**刷新一次 Web 页面**以加载 Client bundle。刷新后工具卡片
 仍是通用卡片时，重启一次 DSH。
 
 本地开发：
 
 ```bash
-cd ~/.dsh/profiles/desktop
+cd ~/.dsh/profiles/<profile>
 pnpm add "link:/absolute/path/to/dsh-pixel-studio"
 ```
 
