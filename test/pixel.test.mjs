@@ -318,6 +318,9 @@ test('inline canvas encodes rows and falls back above its pixel budget', () => {
 
 test('the client bundle is a loadable tool-view registration', () => {
   const packageJson = JSON.parse(fs.readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
+  assert.equal(packageJson.license, 'MIT');
+  assert.equal(packageJson.engines.dsh, '>=0.2.1-rc.2 <0.3.0');
+  assert.equal(packageJson.repository.url, 'git+https://github.com/Fantety/dsh-pixel-studio.git');
   assert.equal(packageJson.exports['./client'], './lib/client.js');
   assert.equal(packageJson.dsh.client.platform, 'web');
   assert.ok(packageJson.dsh.client.inject.includes('@deepseek-ai/dsh-client-ui-tool'));
