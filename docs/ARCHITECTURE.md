@@ -1,14 +1,22 @@
 # Architecture
 
-`dsh-pixel-studio` is split into a Node host half and a browser client half,
-following the standard DeepSeek Harness plugin package layout.
+`dsh-pixel-studio` is a DSH **bundle** containing one host plugin and one
+browser client half. The bundle declaration is what lets the DSH Plugin Manager
+install it; the bundled patch supplies the loader row.
 
 ```text
 package.json
-  main       → lib/index.js
+  main        → lib/index.js
   exports["./client"] → lib/client.js
-  dsh.client → { platform: "web", inject: ["@deepseek-ai/dsh-client-ui-tool"] }
+  dsh.bundle  → { patch: "./cordis.patch.yml" }
+  dsh.client  → { platform: "web", inject: ["@deepseek-ai/dsh-client-ui-tool"] }
+cordis.patch.yml
+  - insert: [{ id: pixel-studio, name: dsh-pixel-studio }]
 ```
+
+Installing the package adds `dsh-pixel-studio` to the profile's
+`dsh.profile.bundles`; the loader applies the patch layer and resolves the row
+back to this package's `main` and `./client` exports.
 
 ## Host half
 

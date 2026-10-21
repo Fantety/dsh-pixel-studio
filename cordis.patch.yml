@@ -1,0 +1,10 @@
+# dsh-pixel-studio bundle patch.
+#
+# The DSH plugin manager installs a bundle by adding its package name to the
+# profile's `dsh.profile.bundles`; the loader then applies this patch layer.
+# Keeping the plugin row here means installation needs no hand-edited profile
+# patch. The row resolves back to this package's host entry (`lib/index.js`)
+# and client entry (`lib/client.js`).
+- insert:
+    - id: pixel-studio
+      name: "dsh-pixel-studio"

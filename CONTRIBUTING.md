@@ -25,21 +25,18 @@ a hand-written `window.__ModuleLoader__.load` client factory.
 ## Local DSH testing
 
 Link the checkout into a CLI-managed profile. Replace `my-profile` with its
-name; the `desktop` profile must be managed through the DSH Plugin Manager or
-the desktop's bundled command runtime instead.
+name; the `desktop` profile must be managed through the DSH Plugin Manager
+instead.
 
 ```bash
 cd ~/.dsh/profiles/my-profile
 pnpm add "link:/absolute/path/to/dsh-pixel-studio"
 ```
 
-Add the loader entry to the profile's `cordis.patch.yml`:
-
-```yaml
-- insert:
-    - id: pixel-studio
-      name: dsh-pixel-studio
-```
+Then add `"dsh-pixel-studio"` to `dsh.profile.bundles` in that profile's
+`package.json`. The package's own `cordis.patch.yml` inserts the `pixel-studio`
+row, so do **not** also copy that row into the profile patch layer. Remove an
+old manual `pixel-studio` insert if one is still present.
 
 Reload DSH, then refresh the Web GUI once to pick up the client bundle.
 

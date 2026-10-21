@@ -82,31 +82,47 @@ project.
 
 ## Install
 
-The package is a normal DSH plugin: host entry `lib/index.js`, client entry
-`lib/client.js`, and a `dsh.client` declaration. It has no build step.
+The package is a DSH **bundle** as well as a plugin: host entry `lib/index.js`,
+client entry `lib/client.js`, `dsh.bundle.patch` pointing at
+`cordis.patch.yml`, and a `dsh.client` declaration. The bundle patch inserts
+the `pixel-studio` loader row; **do not copy that row into your profile patch
+manually** when installing through the Plugin Manager.
 
-### From GitHub via SSH
+### Plugin Manager (recommended, including Desktop)
 
-For a CLI-managed profile, replace `my-profile` with its name (for example
-`web`, `headless`, or a custom profile):
+Paste either address into **Settings → Plugins → Install**:
+
+```text
+https://github.com/Fantety/dsh-pixel-studio
+```
+
+or, when SSH access to GitHub is configured:
+
+```text
+git+ssh://git@github.com/Fantety/dsh-pixel-studio.git
+```
+
+The manager installs the package, adds `dsh-pixel-studio` to the profile's
+`dsh.profile.bundles`, and applies the bundled patch. No hand-edited
+`cordis.patch.yml` row is needed.
+
+### CLI-managed profile
+
+Replace `my-profile` with its name (for example `web`, `headless`, or a custom
+profile):
 
 ```bash
-# 1. Install the package into that profile.
-dsh plugin --profile my-profile add "git+ssh://git@github.com/Fantety/dsh-pixel-studio.git"
-
-# 2. Add the loader entry to ~/.dsh/profiles/my-profile/cordis.patch.yml
+dsh plugin --profile my-profile add \
+  "git+ssh://git@github.com/Fantety/dsh-pixel-studio.git"
 ```
 
-```yaml
-- insert:
-    - id: pixel-studio
-      name: dsh-pixel-studio
-```
+This forwards the package operation to pnpm and reconciles the profile's bundle
+list. Confirm that `dsh-pixel-studio` appears in `dsh.profile.bundles` in
+`~/.dsh/profiles/my-profile/package.json`; the bundled `cordis.patch.yml` then
+adds the plugin row.
 
-The `desktop` profile is managed by the Electron app, so the CLI deliberately
-rejects `dsh plugin --profile desktop`. Use the DSH Plugin Manager (or the
-desktop's bundled command runtime) for that profile, then add the same `insert`
-block.
+The `desktop` profile is owned by the Electron app. Install it through the
+Plugin Manager rather than editing that profile by hand.
 
 Reload the profile, then **refresh the Web GUI once** so the client bundle is
 loaded. If the tool card is still generic after a refresh, restart DSH.
@@ -118,7 +134,9 @@ cd ~/.dsh/profiles/my-profile
 pnpm add "link:/absolute/path/to/dsh-pixel-studio"
 ```
 
-Then add the same `insert` block and refresh the page.
+Then add `"dsh-pixel-studio"` to `dsh.profile.bundles` in that profile's
+`package.json` and reload. Do not also keep an old manual `pixel-studio`
+insert row: the bundle patch now owns that row. Remove it if it exists.
 
 ## Quick start
 

@@ -46,24 +46,42 @@
 
 ## 安装
 
-对 CLI 管理的 profile（把 `my-profile` 替换为实际名称，如 `web`、`headless`
-或自定义 profile）：
+本包同时是 DSH **组合包（bundle）** 和插件：Host 入口 `lib/index.js`、Client
+入口 `lib/client.js`、`dsh.bundle.patch` 指向 `cordis.patch.yml`，以及
+`dsh.client` 声明。安装器会读取该 patch 并自动插入 `pixel-studio` 行，**不要再
+手工把这一行复制到 profile 的 `cordis.patch.yml`**。
+
+### 插件管理器（推荐，Desktop 也可用）
+
+在 **设置 → 插件 → 安装** 中填入：
+
+```text
+https://github.com/Fantety/dsh-pixel-studio
+```
+
+或已配置 GitHub SSH 时：
+
+```text
+git+ssh://git@github.com/Fantety/dsh-pixel-studio.git
+```
+
+安装器会安装包、把 `dsh-pixel-studio` 加入 profile 的 `dsh.profile.bundles`，
+并应用包内 patch。不需要手写 loader 行。
+
+### CLI 管理的 profile
+
+把 `my-profile` 替换为实际名称（如 `web`、`headless` 或自定义 profile）：
 
 ```bash
-# 1) 通过 SSH 安装到 profile
-dsh plugin --profile my-profile add "git+ssh://git@github.com/Fantety/dsh-pixel-studio.git"
-
-# 2) 在 profile 的 cordis.patch.yml 追加：
+dsh plugin --profile my-profile add \
+  "git+ssh://git@github.com/Fantety/dsh-pixel-studio.git"
 ```
 
-```yaml
-- insert:
-    - id: pixel-studio
-      name: dsh-pixel-studio
-```
+命令会把包操作转发给 pnpm，并同步 profile 的 bundle 列表。确认
+`~/.dsh/profiles/my-profile/package.json` 的 `dsh.profile.bundles` 包含
+`dsh-pixel-studio`；之后加载器会应用包内 `cordis.patch.yml` 插入插件行。
 
-`desktop` profile 由 Electron 管理，CLI 会拒绝 `dsh plugin --profile desktop`；
-请使用 DSH 插件管理器或 Desktop 内置命令运行时安装，然后追加同样的 `insert`。
+`desktop` profile 由 Electron 管理，请使用插件管理器安装，不要手改该 profile。
 
 重新加载 profile，然后**刷新一次 Web 页面**以加载 Client bundle。刷新后工具卡片
 仍是通用卡片时，重启一次 DSH。
@@ -74,6 +92,10 @@ dsh plugin --profile my-profile add "git+ssh://git@github.com/Fantety/dsh-pixel-
 cd ~/.dsh/profiles/my-profile
 pnpm add "link:/absolute/path/to/dsh-pixel-studio"
 ```
+
+然后在 profile 的 `package.json` 中把 `"dsh-pixel-studio"` 加入
+`dsh.profile.bundles`，再重新加载。若 profile 里还留着旧的 `pixel-studio`
+手工 insert 行，请删除；现在由包内 patch 负责该行。
 
 ## 使用
 

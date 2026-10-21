@@ -4,8 +4,8 @@
 
 | Version | Supported |
 | --- | --- |
-| 1.2.x | Yes |
-| < 1.2 | Best effort |
+| 1.3.x | Yes |
+| < 1.3 | Best effort |
 
 The plugin targets DeepSeek Harness 0.2.x. Please include the DSH build/version
 and the plugin version in reports.

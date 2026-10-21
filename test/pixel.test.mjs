@@ -484,8 +484,14 @@ test('the client bundle is a loadable tool-view registration', () => {
   assert.equal(packageJson.engines.dsh, '>=0.2.1-rc.2 <0.3.0');
   assert.equal(packageJson.repository.url, 'git+https://github.com/Fantety/dsh-pixel-studio.git');
   assert.equal(packageJson.exports['./client'], './lib/client.js');
+  assert.deepEqual(packageJson.dsh.bundle, { patch: './cordis.patch.yml' });
+  assert.ok(packageJson.files.includes('cordis.patch.yml'));
   assert.equal(packageJson.dsh.client.platform, 'web');
   assert.ok(packageJson.dsh.client.inject.includes('@deepseek-ai/dsh-client-ui-tool'));
+  const patch = fs.readFileSync(new URL('../cordis.patch.yml', import.meta.url), 'utf8');
+  assert.match(patch, /- insert:/);
+  assert.match(patch, /id:\s*pixel-studio/);
+  assert.match(patch, /name:\s*"dsh-pixel-studio"/);
   const source = fs.readFileSync(new URL('../lib/client.js', import.meta.url), 'utf8');
   assert.match(source, /window\.__ModuleLoader__\.load/);
   assert.match(source, /id:\s*"dsh-pixel-studio"/);
