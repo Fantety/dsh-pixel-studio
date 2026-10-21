@@ -37,11 +37,12 @@
 
 ## 安装
 
-对 CLI 管理的 profile（如 `web`、`headless` 或自定义 profile）：
+对 CLI 管理的 profile（把 `my-profile` 替换为实际名称，如 `web`、`headless`
+或自定义 profile）：
 
 ```bash
 # 1) 通过 SSH 安装到 profile
-dsh plugin --profile <profile> add "git+ssh://git@github.com/Fantety/dsh-pixel-studio.git"
+dsh plugin --profile my-profile add "git+ssh://git@github.com/Fantety/dsh-pixel-studio.git"
 
 # 2) 在 profile 的 cordis.patch.yml 追加：
 ```
@@ -61,7 +62,7 @@ dsh plugin --profile <profile> add "git+ssh://git@github.com/Fantety/dsh-pixel-s
 本地开发：
 
 ```bash
-cd ~/.dsh/profiles/<profile>
+cd ~/.dsh/profiles/my-profile
 pnpm add "link:/absolute/path/to/dsh-pixel-studio"
 ```
 

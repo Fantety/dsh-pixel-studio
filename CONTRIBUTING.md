@@ -24,10 +24,12 @@ a hand-written `window.__ModuleLoader__.load` client factory.
 
 ## Local DSH testing
 
-Link the checkout into a profile:
+Link the checkout into a CLI-managed profile. Replace `my-profile` with its
+name; the `desktop` profile must be managed through the DSH Plugin Manager or
+the desktop's bundled command runtime instead.
 
 ```bash
-cd ~/.dsh/profiles/desktop
+cd ~/.dsh/profiles/my-profile
 pnpm add "link:/absolute/path/to/dsh-pixel-studio"
 ```
 

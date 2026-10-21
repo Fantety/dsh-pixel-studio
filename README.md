@@ -74,13 +74,14 @@ The package is a normal DSH plugin: host entry `lib/index.js`, client entry
 
 ### From GitHub via SSH
 
-For a CLI-managed profile (for example `web`, `headless`, or a custom profile):
+For a CLI-managed profile, replace `my-profile` with its name (for example
+`web`, `headless`, or a custom profile):
 
 ```bash
 # 1. Install the package into that profile.
-dsh plugin --profile <profile> add "git+ssh://git@github.com/Fantety/dsh-pixel-studio.git"
+dsh plugin --profile my-profile add "git+ssh://git@github.com/Fantety/dsh-pixel-studio.git"
 
-# 2. Add the loader entry to ~/.dsh/profiles/<profile>/cordis.patch.yml
+# 2. Add the loader entry to ~/.dsh/profiles/my-profile/cordis.patch.yml
 ```
 
 ```yaml
@@ -100,7 +101,7 @@ loaded. If the tool card is still generic after a refresh, restart DSH.
 ### Local development link
 
 ```bash
-cd ~/.dsh/profiles/<profile>
+cd ~/.dsh/profiles/my-profile
 pnpm add "link:/absolute/path/to/dsh-pixel-studio"
 ```
 
