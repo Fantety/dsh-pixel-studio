@@ -15,9 +15,9 @@ package.json
 The host plugin registers:
 
 - a `pixel-studio:craft` system-prompt section;
-- two tools, `pixel_art` and `pixel_animation`.
+- three tools, `pixel_art`, `pixel_animation` and `pixel_shader`.
 
-Tool execution is deterministic:
+Grid/animation execution is deterministic:
 
 1. Validate dimensions, grids, palettes, frame timings and output limits.
 2. Resolve the palette, legend or template roles.
@@ -27,6 +27,39 @@ Tool execution is deterministic:
 6. Encode PNG, GIF, spritesheet, atlas JSON, OYPX and a manifest.
 7. Build compact inline canvas metadata.
 8. Return file paths, craft report and inline canvas in the structured output.
+
+### Procedural shader path
+
+`pixel_shader` follows the design of oy-pixel's `pixel_run_shader`, but uses a
+Lua **subset** rather than an embedded Lua VM. The pipeline is:
+
+```text
+code string
+  → lexer/parser (lib/pixel/lua)
+  → bounded tree-walking interpreter
+  → ShaderCanvas framebuffer
+  → frames + palette
+  → shared writeArtifacts() pipeline
+```
+
+Design contract mirrored from oy-pixel:
+
+- canvas operations: `pset`, `pget`, `line`, `rect`, `rectfill`, `circle`,
+  `circfill`, `ellipse`, `ellipsefill`, `flood`, `replace`, `outline`,
+  `clear`, `stamp`;
+- palette indexing with 1-based `pal(i)`;
+- colour helpers `hex`, `mix`, `hsv`, `alpha`;
+- deterministic `rand`/`noise` with a per-frame seed;
+- animation uniforms `time`, `phase`, `frame_index`, `frame_count`;
+- shape clipping, error line numbers, budgets for instructions (20M), wall
+  clock (5s per frame, 10s total) and changed pixels;
+- direct `#RRGGBB[AA]` strings, with `nil` erasing a pixel.
+
+Supported language: `local`, assignment, calls, `if/elseif/else`, numeric
+`for`, `while`, `break`, table constructors and `[key]` indexing. It does not
+support user functions, metatables, generic-for, `require` or host access.
+`frameCount > 1` samples the same script per frame with `time = index / fps`
+and `phase = index / frameCount`. Full API: [SHADER.md](SHADER.md).
 
 The presentation metadata is a separate projection of that result:
 
@@ -44,11 +77,15 @@ The presentation metadata is a separate projection of that result:
 
 ### Why a custom inline format?
 
-- One character per pixel is smaller than JSON pixel objects or base64 RGBA.
+- One or two symbols per pixel is smaller than JSON pixel objects or base64
+  RGBA, including shader gradients with ~100 colours.
 - The host can produce it without canvas.
 - The client can decode it into `ImageData` synchronously.
-- The format is bounded: ≤131,072 pixels and ≤64 colours. Larger art returns
-  `available: false` and the client renders a compact open-files fallback.
+- The format is bounded: ≤131,072 pixels and ≤4,096 colours. Up to 64 colours
+  use one symbol per pixel (`encoding: "i1"`); larger palettes use two base-64
+  symbols (`encoding: "i2"`), which keeps procedural gradients in the native
+  canvas. Beyond either budget, `available: false` and the client renders a
+  compact open-files fallback.
 
 ## Client half
 
@@ -63,7 +100,7 @@ window.__ModuleLoader__.load({
 
 It requires only the `react` runtime supplied by DSH. During materialization it
 injects scoped CSS. `apply(ctx)` registers a keyed `tool.call.toolview` entry
-for both tool names.
+for all three tool names.
 
 The view:
 
@@ -84,6 +121,9 @@ No image request, data URL, iframe or network access is needed.
   evaluates HTML from artwork names or palette values (React escapes text).
 - The client uses `openFile` callbacks from DSH rather than constructing raw
   resource URLs.
+- Shader code is parsed and executed by a local tree-walking interpreter with
+  no host globals, modules or filesystem access. It cannot call `require`,
+  `eval`, `Function`, or Node APIs, and every loop is budgeted.
 - No third-party runtime dependencies are bundled. The GIF/PNG/OYPX encoders
   are local implementations.
 
@@ -104,6 +144,8 @@ No image request, data URL, iframe or network access is needed.
 - OYPX row-width and direct-colour tokens;
 - inline canvas encoding and budget fallback;
 - craft checks;
+- shader execution: tables, `stamp`, animation phase movement, error lines and
+  pset bounds;
 - DSH tool/section registration;
 - client bundle registration and a real-React render check (optional local
   verification, not part of the public test suite).

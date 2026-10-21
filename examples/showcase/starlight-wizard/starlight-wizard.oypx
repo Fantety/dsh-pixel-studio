@@ -9,8 +9,8 @@
     "colorMode": "rgba8",
     "background": "transparent",
     "activePaletteId": "pixel-studio",
-    "createdAt": "2026-10-21T06:37:49.598Z",
-    "modifiedAt": "2026-10-21T06:37:49.598Z"
+    "createdAt": "2026-10-21T06:58:25.096Z",
+    "modifiedAt": "2026-10-21T06:58:25.096Z"
   },
   "palettes": [
     {
@@ -381,6 +381,6 @@
   "exportPresets": [],
   "extensions": {
     "generatedBy": "dsh-pixel-studio",
-    "generatedAt": "2026-10-21T06:37:49.598Z"
+    "generatedAt": "2026-10-21T06:58:25.096Z"
   }
 }

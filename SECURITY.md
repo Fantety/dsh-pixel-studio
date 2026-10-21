@@ -4,8 +4,8 @@
 
 | Version | Supported |
 | --- | --- |
-| 1.1.x | Yes |
-| < 1.1 | Best effort |
+| 1.2.x | Yes |
+| < 1.2 | Best effort |
 
 The plugin targets DeepSeek Harness 0.2.x. Please include the DSH build/version
 and the plugin version in reports.
@@ -33,19 +33,21 @@ dsh-pixel-studio is a local plugin. It:
 
 - reads the Session working directory and writes generated assets under
   `outputDir`;
-- accepts structured grids, palettes, frame timings and output paths from the
-  model;
+- accepts structured grids, palettes, frame timings, shader scripts and output
+  paths from the model;
+- parses shader scripts and runs them in a bounded tree-walking interpreter
+  with no host globals, modules, filesystem or network access;
 - embeds palette-indexed frame data in tool presentation metadata;
-- does not make network requests and does not execute user-provided code in the
-  host process.
+- does not make network requests.
 
 Relevant classes of issues include path traversal or unexpected file writes,
-unbounded allocation, malformed GIF/PNG/OYPX output, client-side script
-injection through filenames or palette labels, and denial of service in the
-inline canvas decoder.
+unbounded allocation, interpreter escapes or resource-budget bypasses,
+malformed GIF/PNG/OYPX output, client-side script injection through filenames or
+palette labels, and denial of service in the inline canvas decoder.
 
-Path handling and generated file limits are enforced in the host half. The
-client half decodes only generated metadata and renders it with Canvas APIs.
+Path handling, shader budgets and generated file limits are enforced in the
+host half. The client half decodes only generated metadata and renders it with
+Canvas APIs.
 
 ## Disclosure
 

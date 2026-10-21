@@ -1,0 +1,87 @@
+{
+  "generator": "dsh-pixel-studio",
+  "version": "1.2.0",
+  "generatedAt": "2026-10-21T07:00:29.983Z",
+  "name": "shader-horizon",
+  "kind": "art",
+  "width": 32,
+  "height": 32,
+  "frameCount": 1,
+  "fps": 1,
+  "loop": 0,
+  "palette": {
+    "name": "studio",
+    "label": "Studio Warm",
+    "colors": [
+      "#0F0E17FF",
+      "#232136FF",
+      "#3D2C3EFF",
+      "#5A3E4DFF",
+      "#8C5A5AFF",
+      "#C07A5BFF",
+      "#E0A458FF",
+      "#F4D35EFF",
+      "#F7E7CEFF",
+      "#FFF8E7FF",
+      "#7A9E7EFF",
+      "#4F6D5AFF",
+      "#2F4858FF",
+      "#33658AFF",
+      "#86BBD8FF",
+      "#D9F0FFFF"
+    ]
+  },
+  "craft": {
+    "score": 98,
+    "checks": [
+      {
+        "id": "palette",
+        "level": "note",
+        "message": "99 colours used; tighten ramps and reuse palette entries where possible."
+      }
+    ],
+    "metrics": {
+      "colours": 99,
+      "averageOpaquePixels": 1024,
+      "coverage": 100,
+      "isolatedPixels": 0,
+      "maxIsolatedPerFrame": 0,
+      "contrast": 80.8,
+      "loopDelta": 0,
+      "averageFrameMs": 83
+    }
+  },
+  "assets": {
+    "image": "shader-horizon.png",
+    "preview": "shader-horizon-preview.png",
+    "sheet": "shader-horizon-sheet.png",
+    "sheetJson": "shader-horizon-sheet.json",
+    "oypx": "shader-horizon.oypx"
+  },
+  "files": {
+    "image": "shader-horizon.png",
+    "preview": "shader-horizon-preview.png",
+    "gif": null,
+    "sheet": "shader-horizon-sheet.png",
+    "sheetJson": "shader-horizon-sheet.json",
+    "viewer": null,
+    "oypx": "shader-horizon.oypx"
+  },
+  "frames": [
+    {
+      "index": 0,
+      "label": "Shader",
+      "durationMs": 83,
+      "gifDelayMs": 80,
+      "sheet": {
+        "index": 0,
+        "label": "Shader",
+        "x": 0,
+        "y": 0,
+        "width": 32,
+        "height": 32,
+        "durationMs": 83
+      }
+    }
+  ]
+}

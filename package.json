@@ -1,7 +1,7 @@
 {
   "name": "dsh-pixel-studio",
-  "version": "1.1.0",
-  "description": "Native in-chat pixel art and pixel animation studio for DeepSeek Harness, with PNG/GIF, spritesheet and OYPX export.",
+  "version": "1.2.0",
+  "description": "Native in-chat pixel art and animation studio for DeepSeek Harness, with an oy-pixel-style procedural shader plus PNG/GIF, spritesheet and OYPX export.",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
@@ -45,6 +45,9 @@
     "dsh-plugin",
     "pixel-art",
     "pixel-animation",
+    "procedural",
+    "shader",
+    "pixel-shader",
     "sprite",
     "spritesheet",
     "gif",
@@ -58,9 +61,10 @@
   },
   "scripts": {
     "test": "node --test test/*.test.mjs",
-    "check": "node --check lib/index.js && node --check lib/plugin.js && node --check lib/client.js",
+    "check": "node --check lib/index.js && node --check lib/plugin.js && node --check lib/client.js && node --check lib/pixel/shader.js && node --check lib/pixel/lua/lexer.js && node --check lib/pixel/lua/parser.js && node --check lib/pixel/lua/runtime.js",
     "demo": "node scripts/make-demo.mjs",
     "demo:showcase": "node scripts/make-showcase.mjs",
+    "demo:shader": "node scripts/make-shader-demo.mjs",
     "prepublishOnly": "npm test"
   }
 }

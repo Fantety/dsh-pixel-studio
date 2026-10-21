@@ -1,0 +1,187 @@
+{
+  "generator": "dsh-pixel-studio",
+  "version": "1.2.0",
+  "generatedAt": "2026-10-21T07:00:30.096Z",
+  "name": "shader-orb",
+  "kind": "animation",
+  "width": 32,
+  "height": 32,
+  "frameCount": 8,
+  "fps": 12,
+  "loop": 0,
+  "palette": {
+    "name": "sweetie16",
+    "label": "Sweetie 16",
+    "colors": [
+      "#1A1C2CFF",
+      "#5D275DFF",
+      "#B13E53FF",
+      "#EF7D57FF",
+      "#FFCD75FF",
+      "#A7F070FF",
+      "#38B764FF",
+      "#257179FF",
+      "#29366FFF",
+      "#3B5DC9FF",
+      "#41A6F6FF",
+      "#73EFF7FF",
+      "#F4F4F4FF",
+      "#94B0C2FF",
+      "#566C86FF",
+      "#333C57FF"
+    ]
+  },
+  "craft": {
+    "score": 100,
+    "checks": [],
+    "metrics": {
+      "colours": 3,
+      "averageOpaquePixels": 1024,
+      "coverage": 100,
+      "isolatedPixels": 0,
+      "maxIsolatedPerFrame": 0,
+      "contrast": 33.1,
+      "loopDelta": 5,
+      "averageFrameMs": 83
+    }
+  },
+  "assets": {
+    "image": "shader-orb.png",
+    "preview": "shader-orb-preview.png",
+    "sheet": "shader-orb-sheet.png",
+    "sheetJson": "shader-orb-sheet.json",
+    "gif": "shader-orb.gif",
+    "oypx": "shader-orb.oypx"
+  },
+  "files": {
+    "image": "shader-orb.png",
+    "preview": "shader-orb-preview.png",
+    "gif": "shader-orb.gif",
+    "sheet": "shader-orb-sheet.png",
+    "sheetJson": "shader-orb-sheet.json",
+    "viewer": null,
+    "oypx": "shader-orb.oypx"
+  },
+  "frames": [
+    {
+      "index": 0,
+      "label": "shader 1",
+      "durationMs": 83,
+      "gifDelayMs": 80,
+      "sheet": {
+        "index": 0,
+        "label": "shader 1",
+        "x": 0,
+        "y": 0,
+        "width": 32,
+        "height": 32,
+        "durationMs": 83
+      }
+    },
+    {
+      "index": 1,
+      "label": "shader 2",
+      "durationMs": 83,
+      "gifDelayMs": 80,
+      "sheet": {
+        "index": 1,
+        "label": "shader 2",
+        "x": 32,
+        "y": 0,
+        "width": 32,
+        "height": 32,
+        "durationMs": 83
+      }
+    },
+    {
+      "index": 2,
+      "label": "shader 3",
+      "durationMs": 83,
+      "gifDelayMs": 80,
+      "sheet": {
+        "index": 2,
+        "label": "shader 3",
+        "x": 64,
+        "y": 0,
+        "width": 32,
+        "height": 32,
+        "durationMs": 83
+      }
+    },
+    {
+      "index": 3,
+      "label": "shader 4",
+      "durationMs": 83,
+      "gifDelayMs": 80,
+      "sheet": {
+        "index": 3,
+        "label": "shader 4",
+        "x": 96,
+        "y": 0,
+        "width": 32,
+        "height": 32,
+        "durationMs": 83
+      }
+    },
+    {
+      "index": 4,
+      "label": "shader 5",
+      "durationMs": 83,
+      "gifDelayMs": 80,
+      "sheet": {
+        "index": 4,
+        "label": "shader 5",
+        "x": 128,
+        "y": 0,
+        "width": 32,
+        "height": 32,
+        "durationMs": 83
+      }
+    },
+    {
+      "index": 5,
+      "label": "shader 6",
+      "durationMs": 83,
+      "gifDelayMs": 80,
+      "sheet": {
+        "index": 5,
+        "label": "shader 6",
+        "x": 160,
+        "y": 0,
+        "width": 32,
+        "height": 32,
+        "durationMs": 83
+      }
+    },
+    {
+      "index": 6,
+      "label": "shader 7",
+      "durationMs": 83,
+      "gifDelayMs": 80,
+      "sheet": {
+        "index": 6,
+        "label": "shader 7",
+        "x": 192,
+        "y": 0,
+        "width": 32,
+        "height": 32,
+        "durationMs": 83
+      }
+    },
+    {
+      "index": 7,
+      "label": "shader 8",
+      "durationMs": 83,
+      "gifDelayMs": 80,
+      "sheet": {
+        "index": 7,
+        "label": "shader 8",
+        "x": 224,
+        "y": 0,
+        "width": 32,
+        "height": 32,
+        "durationMs": 83
+      }
+    }
+  ]
+}

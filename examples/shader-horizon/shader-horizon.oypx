@@ -1,0 +1,592 @@
+{
+  "format": "oypx",
+  "version": 2,
+  "document": {
+    "id": "doc_shader-horizon",
+    "name": "shader-horizon",
+    "width": 32,
+    "height": 32,
+    "colorMode": "rgba8",
+    "background": "transparent",
+    "activePaletteId": "pixel-studio",
+    "createdAt": "2026-10-21T07:00:29.978Z",
+    "modifiedAt": "2026-10-21T07:00:29.978Z"
+  },
+  "palettes": [
+    {
+      "id": "pixel-studio",
+      "name": "Studio Warm",
+      "colors": [
+        {
+          "id": "p0",
+          "hex": "#0B1026FF",
+          "name": "Colour 1"
+        },
+        {
+          "id": "p1",
+          "hex": "#2F4858FF",
+          "name": "Colour 2"
+        },
+        {
+          "id": "p2",
+          "hex": "#0C1126FF",
+          "name": "Colour 3"
+        },
+        {
+          "id": "p3",
+          "hex": "#0D1127FF",
+          "name": "Colour 4"
+        },
+        {
+          "id": "p4",
+          "hex": "#0F1227FF",
+          "name": "Colour 5"
+        },
+        {
+          "id": "p5",
+          "hex": "#111327FF",
+          "name": "Colour 6"
+        },
+        {
+          "id": "p6",
+          "hex": "#141528FF",
+          "name": "Colour 7"
+        },
+        {
+          "id": "p7",
+          "hex": "#171629FF",
+          "name": "Colour 8"
+        },
+        {
+          "id": "p8",
+          "hex": "#1B182AFF",
+          "name": "Colour 9"
+        },
+        {
+          "id": "p9",
+          "hex": "#201A2BFF",
+          "name": "Colour 10"
+        },
+        {
+          "id": "p10",
+          "hex": "#241D2CFF",
+          "name": "Colour 11"
+        },
+        {
+          "id": "p11",
+          "hex": "#2A1F2DFF",
+          "name": "Colour 12"
+        },
+        {
+          "id": "p12",
+          "hex": "#30222EFF",
+          "name": "Colour 13"
+        },
+        {
+          "id": "p13",
+          "hex": "#36252FFF",
+          "name": "Colour 14"
+        },
+        {
+          "id": "p14",
+          "hex": "#3D2931FF",
+          "name": "Colour 15"
+        },
+        {
+          "id": "p15",
+          "hex": "#442D33FF",
+          "name": "Colour 16"
+        },
+        {
+          "id": "p16",
+          "hex": "#4C3034FF",
+          "name": "Colour 17"
+        },
+        {
+          "id": "p17",
+          "hex": "#543536FF",
+          "name": "Colour 18"
+        },
+        {
+          "id": "p18",
+          "hex": "#FFEC27FF",
+          "name": "Colour 19"
+        },
+        {
+          "id": "p19",
+          "hex": "#5D3938FF",
+          "name": "Colour 20"
+        },
+        {
+          "id": "p20",
+          "hex": "#FF9E51FF",
+          "name": "Colour 21"
+        },
+        {
+          "id": "p21",
+          "hex": "#FFA34FFF",
+          "name": "Colour 22"
+        },
+        {
+          "id": "p22",
+          "hex": "#FFA54DFF",
+          "name": "Colour 23"
+        },
+        {
+          "id": "p23",
+          "hex": "#FFA24FFF",
+          "name": "Colour 24"
+        },
+        {
+          "id": "p24",
+          "hex": "#FF9D52FF",
+          "name": "Colour 25"
+        },
+        {
+          "id": "p25",
+          "hex": "#673E3AFF",
+          "name": "Colour 26"
+        },
+        {
+          "id": "p26",
+          "hex": "#FF9854FF",
+          "name": "Colour 27"
+        },
+        {
+          "id": "p27",
+          "hex": "#FFAA4BFF",
+          "name": "Colour 28"
+        },
+        {
+          "id": "p28",
+          "hex": "#FFB047FF",
+          "name": "Colour 29"
+        },
+        {
+          "id": "p29",
+          "hex": "#FFB346FF",
+          "name": "Colour 30"
+        },
+        {
+          "id": "p30",
+          "hex": "#FFAF48FF",
+          "name": "Colour 31"
+        },
+        {
+          "id": "p31",
+          "hex": "#FFA94BFF",
+          "name": "Colour 32"
+        },
+        {
+          "id": "p32",
+          "hex": "#FFA050FF",
+          "name": "Colour 33"
+        },
+        {
+          "id": "p33",
+          "hex": "#71433CFF",
+          "name": "Colour 34"
+        },
+        {
+          "id": "p34",
+          "hex": "#FFA14FFF",
+          "name": "Colour 35"
+        },
+        {
+          "id": "p35",
+          "hex": "#FFAC4AFF",
+          "name": "Colour 36"
+        },
+        {
+          "id": "p36",
+          "hex": "#FFB644FF",
+          "name": "Colour 37"
+        },
+        {
+          "id": "p37",
+          "hex": "#FFBD40FF",
+          "name": "Colour 38"
+        },
+        {
+          "id": "p38",
+          "hex": "#FFC13EFF",
+          "name": "Colour 39"
+        },
+        {
+          "id": "p39",
+          "hex": "#FFBC41FF",
+          "name": "Colour 40"
+        },
+        {
+          "id": "p40",
+          "hex": "#FFB445FF",
+          "name": "Colour 41"
+        },
+        {
+          "id": "p41",
+          "hex": "#FF9F51FF",
+          "name": "Colour 42"
+        },
+        {
+          "id": "p42",
+          "hex": "#7B483FFF",
+          "name": "Colour 43"
+        },
+        {
+          "id": "p43",
+          "hex": "#FF9B53FF",
+          "name": "Colour 44"
+        },
+        {
+          "id": "p44",
+          "hex": "#FFA84CFF",
+          "name": "Colour 45"
+        },
+        {
+          "id": "p45",
+          "hex": "#FFC03FFF",
+          "name": "Colour 46"
+        },
+        {
+          "id": "p46",
+          "hex": "#FFC93AFF",
+          "name": "Colour 47"
+        },
+        {
+          "id": "p47",
+          "hex": "#FFCF37FF",
+          "name": "Colour 48"
+        },
+        {
+          "id": "p48",
+          "hex": "#FFCE37FF",
+          "name": "Colour 49"
+        },
+        {
+          "id": "p49",
+          "hex": "#FFC83BFF",
+          "name": "Colour 50"
+        },
+        {
+          "id": "p50",
+          "hex": "#FFBE40FF",
+          "name": "Colour 51"
+        },
+        {
+          "id": "p51",
+          "hex": "#FFB246FF",
+          "name": "Colour 52"
+        },
+        {
+          "id": "p52",
+          "hex": "#FFA64DFF",
+          "name": "Colour 53"
+        },
+        {
+          "id": "p53",
+          "hex": "#FF9954FF",
+          "name": "Colour 54"
+        },
+        {
+          "id": "p54",
+          "hex": "#864D41FF",
+          "name": "Colour 55"
+        },
+        {
+          "id": "p55",
+          "hex": "#FFAD49FF",
+          "name": "Colour 56"
+        },
+        {
+          "id": "p56",
+          "hex": "#FFBA42FF",
+          "name": "Colour 57"
+        },
+        {
+          "id": "p57",
+          "hex": "#FFC73BFF",
+          "name": "Colour 58"
+        },
+        {
+          "id": "p58",
+          "hex": "#FFD434FF",
+          "name": "Colour 59"
+        },
+        {
+          "id": "p59",
+          "hex": "#FFDC2FFF",
+          "name": "Colour 60"
+        },
+        {
+          "id": "p60",
+          "hex": "#FFDB30FF",
+          "name": "Colour 61"
+        },
+        {
+          "id": "p61",
+          "hex": "#FFD135FF",
+          "name": "Colour 62"
+        },
+        {
+          "id": "p62",
+          "hex": "#FFC53CFF",
+          "name": "Colour 63"
+        },
+        {
+          "id": "p63",
+          "hex": "#FFB843FF",
+          "name": "Colour 64"
+        },
+        {
+          "id": "p64",
+          "hex": "#FF9C52FF",
+          "name": "Colour 65"
+        },
+        {
+          "id": "p65",
+          "hex": "#915344FF",
+          "name": "Colour 66"
+        },
+        {
+          "id": "p66",
+          "hex": "#FFAE48FF",
+          "name": "Colour 67"
+        },
+        {
+          "id": "p67",
+          "hex": "#FFCA39FF",
+          "name": "Colour 68"
+        },
+        {
+          "id": "p68",
+          "hex": "#FFD832FF",
+          "name": "Colour 69"
+        },
+        {
+          "id": "p69",
+          "hex": "#FFE62AFF",
+          "name": "Colour 70"
+        },
+        {
+          "id": "p70",
+          "hex": "#FFE42CFF",
+          "name": "Colour 71"
+        },
+        {
+          "id": "p71",
+          "hex": "#FFD633FF",
+          "name": "Colour 72"
+        },
+        {
+          "id": "p72",
+          "hex": "#9D5946FF",
+          "name": "Colour 73"
+        },
+        {
+          "id": "p73",
+          "hex": "#FFBB42FF",
+          "name": "Colour 74"
+        },
+        {
+          "id": "p74",
+          "hex": "#FFDD2FFF",
+          "name": "Colour 75"
+        },
+        {
+          "id": "p75",
+          "hex": "#FFDC30FF",
+          "name": "Colour 76"
+        },
+        {
+          "id": "p76",
+          "hex": "#FFD235FF",
+          "name": "Colour 77"
+        },
+        {
+          "id": "p77",
+          "hex": "#AA5F49FF",
+          "name": "Colour 78"
+        },
+        {
+          "id": "p78",
+          "hex": "#FFB545FF",
+          "name": "Colour 79"
+        },
+        {
+          "id": "p79",
+          "hex": "#FFD036FF",
+          "name": "Colour 80"
+        },
+        {
+          "id": "p80",
+          "hex": "#B7664CFF",
+          "name": "Colour 81"
+        },
+        {
+          "id": "p81",
+          "hex": "#FFB744FF",
+          "name": "Colour 82"
+        },
+        {
+          "id": "p82",
+          "hex": "#FFC23EFF",
+          "name": "Colour 83"
+        },
+        {
+          "id": "p83",
+          "hex": "#FFAB4AFF",
+          "name": "Colour 84"
+        },
+        {
+          "id": "p84",
+          "hex": "#FF9F50FF",
+          "name": "Colour 85"
+        },
+        {
+          "id": "p85",
+          "hex": "#C46D4FFF",
+          "name": "Colour 86"
+        },
+        {
+          "id": "p86",
+          "hex": "#FFB147FF",
+          "name": "Colour 87"
+        },
+        {
+          "id": "p87",
+          "hex": "#FFA150FF",
+          "name": "Colour 88"
+        },
+        {
+          "id": "p88",
+          "hex": "#D27452FF",
+          "name": "Colour 89"
+        },
+        {
+          "id": "p89",
+          "hex": "#283D4EFF",
+          "name": "Colour 90"
+        },
+        {
+          "id": "p90",
+          "hex": "#E17B55FF",
+          "name": "Colour 91"
+        },
+        {
+          "id": "p91",
+          "hex": "#263A4CFF",
+          "name": "Colour 92"
+        },
+        {
+          "id": "p92",
+          "hex": "#213244FF",
+          "name": "Colour 93"
+        },
+        {
+          "id": "p93",
+          "hex": "#233547FF",
+          "name": "Colour 94"
+        },
+        {
+          "id": "p94",
+          "hex": "#1D2C3FFF",
+          "name": "Colour 95"
+        },
+        {
+          "id": "p95",
+          "hex": "#19263AFF",
+          "name": "Colour 96"
+        },
+        {
+          "id": "p96",
+          "hex": "#172337FF",
+          "name": "Colour 97"
+        },
+        {
+          "id": "p97",
+          "hex": "#141E33FF",
+          "name": "Colour 98"
+        },
+        {
+          "id": "p98",
+          "hex": "#121B30FF",
+          "name": "Colour 99"
+        }
+      ]
+    }
+  ],
+  "timeline": {
+    "fps": 1,
+    "loop": "loop",
+    "frames": [
+      {
+        "id": "f0",
+        "index": 0,
+        "durationMs": 83,
+        "tagIds": []
+      }
+    ],
+    "tags": []
+  },
+  "revision": 0,
+  "layers": [
+    {
+      "id": "layer_art",
+      "name": "Artwork",
+      "type": "raster",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "cels": [
+        {
+          "frameId": "f0",
+          "encoding": "rle-row",
+          "rows": [
+            "#0B1026FF*4 #2F4858FF*2 #0B1026FF*6 #2F4858FF #0B1026FF*19",
+            "#0B1026FF*9 #2F4858FF #0B1026FF*22",
+            "#0C1126FF*7 #2F4858FF #0C1126FF*24",
+            "#0D1127FF*10 #2F4858FF #0D1127FF*21",
+            "#0F1227FF*11 #2F4858FF #0F1227FF*19 #2F4858FF",
+            "#111327FF*8 #2F4858FF #111327FF*23",
+            "#141528FF*32",
+            "#171629FF*12 #2F4858FF #171629FF*19",
+            "#1B182AFF*32",
+            "#201A2BFF*8 #2F4858FF #201A2BFF #2F4858FF #201A2BFF*21",
+            "#241D2CFF*32",
+            "#2A1F2DFF*19 #2F4858FF #2A1F2DFF*2 #2F4858FF*2 #2A1F2DFF*8",
+            "#30222EFF*32",
+            "#36252FFF*12 #2F4858FF #36252FFF*4 #2F4858FF #36252FFF*14",
+            "#3D2931FF*17 #2F4858FF #3D2931FF*14",
+            "#442D33FF*32",
+            "#2F4858FF #4C3034FF*8 #2F4858FF #4C3034FF*8 #2F4858FF #4C3034FF*13",
+            "#543536FF*19 #FFEC27FF*7 #543536FF*6",
+            "#5D3938FF*18 #FFEC27FF*2 #FF9E51FF #FFA34FFF #FFA54DFF*2 #FFA24FFF #FF9D52FF #FFEC27FF*2 #5D3938FF*4",
+            "#673E3AFF*17 #FFEC27FF #FF9854FF #FFA24FFF #FFAA4BFF #FFB047FF #FFB346FF*2 #FFAF48FF #FFA94BFF #FFA050FF #FFEC27FF*2 #673E3AFF*3",
+            "#71433CFF*17 #FFEC27FF #FFA14FFF #FFAC4AFF #FFB644FF #FFBD40FF #FFC13EFF*2 #FFBC41FF #FFB445FF #FFAA4BFF #FF9F51FF #FFEC27FF #71433CFF*3",
+            "#7B483FFF*16 #FFEC27FF #FF9B53FF #FFA84CFF #FFB445FF #FFC03FFF #FFC93AFF #FFCF37FF #FFCE37FF #FFC83BFF #FFBE40FF #FFB246FF #FFA64DFF #FF9954FF #FFEC27FF #7B483FFF*2",
+            "#864D41FF*16 #FFEC27FF #FF9F51FF #FFAD49FF #FFBA42FF #FFC73BFF #FFD434FF #FFDC2FFF #FFDB30FF #FFD135FF #FFC53CFF #FFB843FF #FFAA4BFF #FF9C52FF #FFEC27FF #864D41FF*2",
+            "#915344FF*16 #FFEC27FF #FFA050FF #FFAE48FF #FFBC41FF #FFCA39FF #FFD832FF #FFE62AFF #FFE42CFF #FFD633FF #FFC83BFF #FFBA42FF #FFAC4AFF #FF9E51FF #FFEC27FF #915344FF*2",
+            "#9D5946FF*16 #FFEC27FF #FF9F51FF #FFAD49FF #FFBB42FF #FFC83BFF #FFD434FF #FFDD2FFF #FFDC30FF #FFD235FF #FFC53CFF #FFB843FF #FFAA4BFF #FF9C52FF #FFEC27FF #9D5946FF*2",
+            "#AA5F49FF*16 #FFEC27FF #FF9C52FF #FFA94BFF #FFB545FF #FFC13EFF #FFCA39FF #FFD036FF #FFCF37FF #FFC93AFF #FFBE40FF #FFB346FF #FFA64DFF #FF9954FF #FFEC27FF #AA5F49FF*2",
+            "#B7664CFF*17 #FFEC27FF #FFA24FFF #FFAD49FF #FFB744FF #FFBE40FF #FFC23EFF*2 #FFBD40FF #FFB545FF #FFAB4AFF #FF9F50FF #FFEC27FF #B7664CFF*3",
+            "#C46D4FFF*16 #2F4858FF*2 #FF9954FF #FFA34FFF #FFAB4AFF #FFB147FF #FFB445FF*2 #FFB047FF #FFAA4BFF #FFA150FF #2F4858FF*3 #C46D4FFF*2",
+            "#D27452FF*15 #2F4858FF #283D4EFF*2 #2F4858FF*4 #FFA64DFF*2 #2F4858FF*3 #283D4EFF*3 #2F4858FF #D27452FF",
+            "#2F4858FF*9 #E17B55FF*4 #2F4858FF*2 #263A4CFF #213244FF*2 #263A4CFF*4 #2F4858FF*2 #263A4CFF*3 #213244FF*3 #263A4CFF #2F4858FF",
+            "#233547FF*9 #2F4858FF*4 #233547FF*2 #1D2C3FFF #19263AFF*2 #1D2C3FFF*4 #233547FF*2 #1D2C3FFF*3 #19263AFF*3 #1D2C3FFF #233547FF",
+            "#172337FF*9 #1D2C3FFF*4 #172337FF*2 #141E33FF #121B30FF*2 #141E33FF*4 #172337FF*2 #141E33FF*3 #121B30FF*3 #141E33FF #172337FF"
+          ]
+        }
+      ]
+    }
+  ],
+  "exportPresets": [],
+  "extensions": {
+    "generatedBy": "dsh-pixel-studio",
+    "generatedAt": "2026-10-21T07:00:29.978Z"
+  }
+}

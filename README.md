@@ -6,9 +6,9 @@
 
 A native, in-chat **pixel art and pixel animation studio** for
 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness). The agent
-writes palette-indexed grids or uses a template/motion recipe, and the result
-is rendered as an interactive canvas directly in the conversation — not as a
-deliverable card or a separate viewer page.
+writes a procedural shader, palette-indexed grids, or a template/motion recipe,
+and the result is rendered as an interactive canvas directly in the conversation
+— not as a deliverable card or a separate viewer page.
 
 The same result is also exported as real production files: transparent PNG,
 GIF89a animation, spritesheet + JSON atlas, an optional standalone HTML viewer,
@@ -19,10 +19,19 @@ project.
 
 ![Native ghost animation](examples/native-ghost/native-ghost-preview.png)
 
+![Procedural shader landscape](examples/shader-horizon/shader-horizon-preview.png)
+
+![Procedural shader animation](examples/shader-orb/shader-orb.gif)
+
 ## Why another pixel tool?
 
 - **Native canvas first.** Playback, frame stepping, zoom, pixel grid, onion
   skin, palette, and craft score live in the chat tool view.
+- **Shader-like procedural generation.** `pixel_shader` is an adaptation of
+  oy-pixel's `pixel_run_shader` design: a bounded Lua-subset canvas API with
+  `pal`, `mix`, `hsv`, `alpha`, `rand`, `noise`, `phase`/`time`, shapes,
+  flood-fill, outline and stamp. The language is not Lua itself, but the
+  generation contract follows the same design.
 - **Designed for agents.** One-character-per-pixel grids are compact,
   deterministic, easy to diff, and validated before any file is written.
 - **Actual game assets.** PNG, GIF, spritesheet, atlas JSON, OYPX and a manifest
@@ -32,7 +41,8 @@ project.
   every result includes a deterministic craft report.
 - **Zero runtime dependencies.** Host code uses Node built-ins only; the client
   half uses the React runtime already supplied by DSH.
-- **Safe by design.** Inline canvas data is capped and decoded locally; the
+- **Safe by design.** Shader scripts run in a bounded tree-walking interpreter
+  with no host access; inline canvas data is capped and decoded locally; the
   plugin performs no network requests.
 
 ## Features
@@ -48,6 +58,9 @@ project.
 
 ### Pixel tools
 
+- `pixel_shader` — procedural generation with a Lua-subset canvas API,
+  deterministic `rand`/`noise`, palette helpers, shapes, `stamp`, and
+  `phase`/`time` animation sampling
 - `pixel_art` — stills, icons, sprites, scenes, portraits
 - `pixel_animation` — explicit frames or a base sprite plus a motion recipe
 - 7 built-in palettes: PICO-8, Game Boy, Sweetie 16, DawnBringer 16/32,
@@ -180,6 +193,46 @@ Explicit frames are also supported:
 }
 ```
 
+### Procedural shader
+
+Use the shader path when a formula is shorter than rows: gradients, glows,
+textures, symmetry, geometry and formula-driven animation.
+
+```json
+{
+  "name": "shader-horizon",
+  "width": 32,
+  "height": 32,
+  "palette": "studio",
+  "seed": 12,
+  "code": "local top = hex('#0B1026')\nlocal low = hex('#FF8A5C')\nfor y = 0, height - 1 do\n  local t = y / (height - 1)\n  for x = 0, width - 1 do canvas.pset(x, y, mix(top, low, t * t)) end\nend\ncanvas.circfill(width * 0.7, height * 0.72, 7, hex('#FFEC27'))\nfor x = 0, width - 1 do\n  local ridge = math.floor(height * 0.72 + noise(x, 0, 0.18) * 8)\n  for y = ridge, height - 1 do canvas.pset(x, y, hex('#2F4858')) end\nend"
+}
+```
+
+The language is a safe Lua **subset**, not a Lua runtime: `local`, assignment,
+calls, `if/elseif/else`, numeric `for`, `while`, `break`, table constructors,
+and `[key]` indexing. Canvas API:
+
+```text
+canvas.pset(x, y, c)            canvas.pget(x, y)
+canvas.line(x0, y0, x1, y1, c)  canvas.rect / rectfill
+canvas.circle / circfill        canvas.ellipse / ellipsefill
+canvas.flood(x, y, c)           canvas.replace(old, new)
+canvas.outline(c)               canvas.clear(c)
+canvas.stamp(rows, legend, x, y)
+```
+
+Globals: `width`, `height`, `time`, `phase`, `frame_index`, `frame_count`.
+Helpers: `pal(i)` (1-based), `hex`, `mix`, `hsv`, `alpha`, `rand`, `noise`,
+`clamp`, `step`, `smoothstep`, `math.*`, `string.format/len/lower/upper/sub/rep`.
+Set `frameCount > 1` to render an animation sampled with `time`/`phase`.
+
+The shader tool mirrors oy-pixel's design (canvas operations, palette indexing,
+time/phase uniforms, seeded randomness) but runs in a bounded JS interpreter
+instead of embedding Lua. No host globals, filesystem or network access is
+available to shader code. See [docs/SHADER.md](docs/SHADER.md) for the full
+API, design mapping and examples.
+
 ## Output files
 
 Files are written under the session workspace, by default `pixel-art/`:
@@ -223,41 +276,45 @@ iterate on them before finishing.
 
 While mounted, the plugin registers a DSH system-prompt section named
 `pixel-studio:craft` (order `2500`). It is adapted from oy-pixel's
-`PIXEL_ART_CRAFT` / `PIXEL_ANIMATION_CRAFT` guidance and covers:
+`PIXEL_AGENT_INSTRUCTIONS` workflow and its `PIXEL ART CRAFT` /
+`PIXEL ANIMATION CRAFT` guidance, and covers:
 
+- compose once, verify once; prefer a small procedural shader over long grids
 - silhouette first, 2×2+ detail clusters, clean stair-stepped diagonals
 - one top-left light source, hue-shifted 3–5 step ramps, cast shadows
 - ordered dithering, one outline strategy, sparing anti-aliasing
 - lean animation counts, key poses, easing, anticipation/overshoot, squash,
   smears, subpixel motion, secondary motion and loop seams
 
-The same guidance is referenced from both tool descriptions.
+The same guidance is referenced from all three tool descriptions.
 
 ## Architecture
 
 ```text
-pixel_art / pixel_animation (host tools)
-        │
-        ├── validate grid/palette/frames
-        ├── compose layers + effects
-        ├── render frames
-        ├── write PNG / GIF / sheet / OYPX / manifest
-        └── return compact inline canvas + file paths
-                    │
-                    ▼
-        presentationMeta.canvas
-                    │
-                    ▼
-lib/client.js → tool.call.toolview → <canvas> in chat
+pixel_shader ──► Lua-subset AST ──► bounded interpreter ──┐
+pixel_art / pixel_animation ──► grids / layers / motion ──┤
+                                                          ▼
+                                      frames + palette + craft report
+                                                          │
+                                      write PNG / GIF / sheet / OYPX / manifest
+                                                          │
+                                      compact presentationMeta.canvas
+                                                          │
+                                                          ▼
+                                  lib/client.js → tool.call.toolview → <canvas>
 ```
 
 - **Host half** (`lib/`, Node ESM) has no runtime dependencies and uses
   `node:zlib` for PNG.
+- **Shader half** (`lib/pixel/shader.js` + `lib/pixel/lua/`) is a bounded
+  tree-walking interpreter for a Lua subset. It exposes an oy-pixel-style
+  canvas API, palette helpers, seeded `rand`/`noise`, and `time`/`phase`
+  animation uniforms. No host globals, `require`, or filesystem access.
 - **Client half** (`lib/client.js`) is a hand-written
-  `window.__ModuleLoader__.load` factory, registered for `pixel_art` and
-  `pixel_animation`.
-- **Inline data** is palette-indexed, one character per pixel, capped at
-  131,072 pixels and 64 colours.
+  `window.__ModuleLoader__.load` factory, registered for all three tools.
+- **Inline data** is palette-indexed, one or two characters per pixel, capped
+  at 131,072 pixels and 4,096 colours. Shader gradients therefore stay visible
+  in the native canvas instead of falling back immediately.
 - **No network**: the plugin reads only the current session working directory
   and writes only under `outputDir`.
 
@@ -272,6 +329,7 @@ npm test
 npm run check
 npm run demo
 npm run demo:showcase
+npm run demo:shader
 ```
 
 The demo scripts regenerate the checked-in examples. No install step is needed
@@ -281,11 +339,13 @@ because the plugin has zero runtime dependencies.
 
 - Canvas side ≤ 256 px; animation ≤ 120 frames and 8,000,000 total pixels.
 - Grid-character palettes ≤ 36 colours; use `legend` for up to 64 symbols.
+- Shader scripts are capped at 64 KiB, 20M instructions and 5s per frame, with
+  a 10s total generation budget; `width`/`height`/`frameCount` are upper-bounded.
 - GIF timing granularity is 10 ms; frames below 20 ms are stored at 20 ms.
 - GIF transparency is 1-bit; translucent edges are quantised.
 - OYPX export supports at most 256 unique colours.
-- The agent draws structured grids; the plugin does not call an image
-  generation model.
+- The plugin does not call an image generation model; the agent writes grids or
+  shader code, which the plugin renders deterministically.
 
 ## Contributing
 

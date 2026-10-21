@@ -11,6 +11,7 @@ import { parseColor, colorToHex } from '../lib/pixel/color.js';
 import { buildAnimation, buildStatic } from '../lib/pixel/art.js';
 import { inspectCraft } from '../lib/pixel/craft.js';
 import { buildInlineCanvas } from '../lib/pixel/inline.js';
+import { buildShader } from '../lib/pixel/shader.js';
 import { encodeGif } from '../lib/pixel/gif.js';
 import { encodePng } from '../lib/pixel/png.js';
 import { composeLayers, parseGrid, scaleRaster, toRgba } from '../lib/pixel/raster.js';
@@ -213,7 +214,7 @@ test('craft report flags low contrast, isolated pixels and a broken loop seam', 
   assert.equal(loopCraft.metrics.loopDelta, 100);
 });
 
-test('the plugin registers the craft prompt section and both tools', () => {
+test('the plugin registers the craft prompt section and all three tools', () => {
   const tools = [];
   const sections = [];
   const ctx = {
@@ -223,13 +224,15 @@ test('the plugin registers the craft prompt section and both tools', () => {
     get() { return undefined; },
   };
   apply(ctx);
-  assert.equal(tools.length, 2);
-  assert.deepEqual(tools.map((tool) => tool.name).sort(), ['pixel_animation', 'pixel_art']);
+  assert.equal(tools.length, 3);
+  assert.deepEqual(tools.map((tool) => tool.name).sort(), ['pixel_animation', 'pixel_art', 'pixel_shader']);
   assert.equal(sections.length, 1);
   assert.equal(sections[0].name, 'pixel-studio:craft');
   assert.equal(sections[0].order, 2500);
   assert.match(PIXEL_CRAFT_PROMPT, /PIXEL ART CRAFT/);
   assert.match(PIXEL_CRAFT_PROMPT, /PIXEL ANIMATION CRAFT/);
+  assert.match(PIXEL_CRAFT_PROMPT, /pixel_shader/);
+  assert.match(PIXEL_CRAFT_PROMPT, /compose once, verify once/i);
   assert.match(sections[0].text, /one light source/i);
 });
 
@@ -301,9 +304,27 @@ test('inline canvas encodes rows and falls back above its pixel budget', () => {
   });
   const inline = buildInlineCanvas({ width: 2, height: 2, frames: [frame('a'), frame('b')] });
   assert.equal(inline.available, true);
+  assert.equal(inline.encoding, 'i1');
   assert.equal(inline.colors.length, 2);
   assert.deepEqual(inline.frames[0].rows, ['0.', '.1']);
   assert.equal(inline.frames[1].label, 'b');
+
+  const manyColors = Array.from({ length: 65 }, (_, index) => ({
+    r: index,
+    g: 255 - index,
+    b: index * 2,
+    a: 255,
+  }));
+  const wide = buildInlineCanvas({
+    width: 65,
+    height: 1,
+    frames: [{ raster: { width: 65, height: 1, pixels: manyColors }, durationMs: 100 }],
+  });
+  assert.equal(wide.available, true);
+  assert.equal(wide.encoding, 'i2');
+  assert.equal(wide.colors.length, 65);
+  assert.equal(wide.frames[0].rows[0].length, 130);
+  assert.match(wide.frames[0].rows[0], /^.{130}$/);
 
   const large = Array.from({ length: 9 }, (_, index) => ({
     raster: { width: 128, height: 128, pixels: new Array(128 * 128).fill(null) },
@@ -314,6 +335,147 @@ test('inline canvas encodes rows and falls back above its pixel budget', () => {
   assert.equal(fallback.available, false);
   assert.equal(fallback.frames.length, 0);
   assert.match(fallback.reason, /exceeds/);
+});
+
+test('shader renders procedural pixels, tables, stamp and animation phases', () => {
+  const still = buildShader({
+    name: 'shader-still',
+    width: 8,
+    height: 8,
+    palette: 'mono',
+    code: [
+      'canvas.clear(pal(1))',
+      'canvas.circfill(4, 4, 2, pal(2))',
+      "canvas.stamp({'.o.', 'ooo'}, {o=pal(2)}, 0, 0)",
+    ].join('\n'),
+  });
+  assert.equal(still.kind, 'art');
+  assert.equal(still.frames.length, 1);
+  assert.equal(still.width, 8);
+  const pixels = still.frames[0].raster.pixels;
+  assert.ok(pixels.some((pixel) => pixel !== null));
+  assert.ok(pixels.some((pixel) => pixel && pixel.r < 100 && pixel.g < 100 && pixel.b < 100));
+  assert.ok(pixels.some((pixel) => pixel && pixel.r > 200 && pixel.g > 200 && pixel.b > 200));
+
+  const animation = buildShader({
+    name: 'shader-animation',
+    width: 8,
+    height: 8,
+    paletteColors: ['#000000', '#FFFFFF'],
+    frameCount: 3,
+    fps: 10,
+    seed: 4,
+    code: "canvas.clear(pal(1))\ncanvas.circfill(phase * (width - 1), 4, 1, pal(2))",
+  });
+  assert.equal(animation.kind, 'animation');
+  assert.equal(animation.frames.length, 3);
+  assert.equal(animation.frames[0].durationMs, 100);
+  const positions = animation.frames.map((frame) => {
+    const white = [];
+    frame.raster.pixels.forEach((pixel, index) => {
+      if (pixel && pixel.r === 255) white.push(index % 8);
+    });
+    return Math.round(white.reduce((sum, x) => sum + x, 0) / Math.max(1, white.length));
+  });
+  assert.ok(new Set(positions).size > 1, `expected movement, got ${positions}`);
+});
+
+test('shader errors include the script line', () => {
+  assert.throws(() => buildShader({
+    name: 'shader-error',
+    width: 8,
+    height: 8,
+    code: 'canvas.pset(0, 0, pal(1))\ncanvas.no_such_method(1)',
+  }), /line 2/);
+  assert.throws(() => buildShader({
+    name: 'shader-bounds',
+    width: 8,
+    height: 8,
+    code: 'canvas.pset(99, 0, pal(1))',
+  }), /line 1/);
+  assert.throws(() => buildShader({
+    name: 'shader-escape',
+    width: 8,
+    height: 8,
+    code: "canvas.constructor.constructor('return process')().exit(0)",
+  }), /not available in the shader sandbox/);
+  assert.throws(() => buildShader({
+    name: 'shader-deep',
+    width: 8,
+    height: 8,
+    code: `canvas.pset(0, 0, ${'('.repeat(300)}pal(1)${')'.repeat(300)})`,
+  }), /nesting is too deep/);
+  assert.throws(() => buildShader({
+    name: 'shader-internal',
+    width: 8,
+    height: 8,
+    code: 'canvas.pixels.fill(hex(\'#FFFFFFFF\'))',
+  }), /not part of the shader API/);
+});
+
+test('pixel_shader executes through the DSH tool boundary', async () => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'dsh-pixel-shader-tool-'));
+  try {
+    const tools = [];
+    const sections = [];
+    apply({
+      systemPrompt: { section: (section) => sections.push(section) },
+      tools: { register: (tool) => tools.push(tool) },
+      workingDirectory: { ensure: async () => directory },
+    });
+    const shader = tools.find((tool) => tool.name === 'pixel_shader');
+    assert.ok(shader);
+    assert.deepEqual(shader.parameters.required, ['name', 'code']);
+    const result = await shader.execute({
+      name: 'shader-tool',
+      width: 12,
+      height: 12,
+      palette: 'sweetie16',
+      frameCount: 2,
+      fps: 8,
+      code: 'canvas.clear(pal(2))\ncanvas.circfill(phase * (width - 1), 6, 2, pal(6))',
+    }, { agent: {}, signal: null });
+    assert.equal(result.kind, 'animation');
+    assert.equal(result.frameCount, 2);
+    assert.equal(result.canvas.available, true);
+    assert.match(result.canvas.encoding, /^i[12]$/);
+    assert.equal(result.canvas.frames.length, 2);
+    assert.ok(fs.existsSync(result.imagePath));
+    assert.ok(fs.existsSync(result.gifPath));
+    assert.ok(fs.existsSync(result.oypxPath));
+  } finally {
+    fs.rmSync(directory, { recursive: true, force: true });
+  }
+});
+
+test('shader output uses the shared artifact and inline-canvas pipeline', () => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'dsh-pixel-shader-'));
+  try {
+    const art = buildShader({
+      name: 'shader-files',
+      width: 10,
+      height: 10,
+      palette: 'sweetie16',
+      seed: 3,
+      code: "canvas.clear(pal(2))\ncanvas.circfill(5, 5, 3, pal(6))",
+    });
+    const output = writeArtifacts(art, {
+      cwd: directory,
+      outputDir: 'shader-files',
+      includeViewer: false,
+      includeOypx: true,
+    });
+    assert.ok(fs.existsSync(output.image));
+    assert.ok(fs.existsSync(output.preview));
+    assert.ok(fs.existsSync(output.sheet));
+    assert.ok(fs.existsSync(output.oypx));
+    assert.ok(fs.existsSync(output.metadata));
+    assert.equal(output.inline.available, true);
+    assert.equal(output.inline.frames.length, 1);
+    assert.ok(output.files.some((file) => file.name.endsWith('.oypx')));
+  } finally {
+    fs.rmSync(directory, { recursive: true, force: true });
+  }
 });
 
 test('the client bundle is a loadable tool-view registration', () => {
@@ -330,10 +492,11 @@ test('the client bundle is a loadable tool-view registration', () => {
   assert.match(source, /name:\s*"tool\.call\.toolview"/);
   assert.match(source, /key:\s*"pixel_art"/);
   assert.match(source, /key:\s*"pixel_animation"/);
+  assert.match(source, /key:\s*"pixel_shader"/);
   assert.match(source, /createImageData/);
 });
 
-test('the client factory registers both keyed tool views', async () => {
+test('the client factory registers all keyed tool views', async () => {
   const previousWindow = globalThis.window;
   const previousDocument = globalThis.document;
   let registration;
@@ -372,7 +535,7 @@ test('the client factory registers both keyed tool views', async () => {
       },
     };
     exports.apply(ctx);
-    assert.deepEqual(views.map((view) => view.definition.key), ['pixel_art', 'pixel_animation']);
+    assert.deepEqual(views.map((view) => view.definition.key), ['pixel_art', 'pixel_animation', 'pixel_shader']);
     assert.equal(styleNodes.length, 1);
     assert.equal(styleNodes[0].dataset.plugin, 'dsh-pixel-studio');
   } finally {

@@ -18,10 +18,15 @@ code or binaries are bundled in the npm package.
 - Usage: The pixel-art craft guidance in `lib/craft-prompt.js` is adapted from
   oy-pixel's in-editor `PIXEL_AGENT_INSTRUCTIONS` ("PIXEL ART CRAFT" and
   "PIXEL ANIMATION CRAFT" sections).
+- Also adapted: the `pixel_shader` canvas/helper API and animation-uniform
+  design follow oy-pixel's `pixel_run_shader` contract. The JavaScript lexer,
+  parser, interpreter and renderer in this repository are original
+  implementations; no Rust/Lua source or binary is copied.
 - Licensing note: oy-pixel is separately distributed under its own license.
-  The adapted guidance in this repository was contributed by the copyright
-  holder of both projects and is released under this repository's MIT license.
-  No oy-pixel source code or binary is copied into this repository.
+  The adapted guidance and API design in this repository were contributed by
+  the copyright holder of both projects and are released under this
+  repository's MIT license. No oy-pixel source code or binary is copied into
+  this repository.
 
 ## React
 

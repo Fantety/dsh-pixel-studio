@@ -7,26 +7,35 @@
 [![DeepSeek Harness](https://img.shields.io/badge/DeepSeek%20Harness-0.2.x-4c6ef5)](https://github.com/deepseek-ai/deepseek-harness)
 
 面向 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 的
-**像素画 / 像素动画生成插件**。模型编写调色板索引网格，或使用模板 + 动作参数，
-插件把结果显示为聊天内原生 Canvas，并同时导出可直接用于游戏开发的素材文件。
+**像素画 / 像素动画生成插件**。模型可以用 oy-pixel 风格的 shader 脚本程序化
+生成，也可以编写调色板索引网格或使用模板 + 动作参数；插件把结果显示为
+聊天内原生 Canvas，并同时导出可直接用于游戏开发的素材文件。
 
 ![模板总览](examples/template-gallery.png)
 
 ![原生幽灵动画](examples/native-ghost/native-ghost-preview.png)
 
+![程序化 shader 场景](examples/shader-horizon/shader-horizon-preview.png)
+
 ## 特性
 
 - **聊天内原生画布**：播放/暂停、逐帧、1-24× 最近邻缩放、网格、洋葱皮、
   调色板、craft 分数；不再使用交付物卡片或独立 viewer 作为主界面。
-- **两个工具**：`pixel_art` 生成静态像素画；`pixel_animation` 支持显式逐帧
-  或基础精灵 + 动作预设。
+- **三个工具**：`pixel_shader` 用程序化脚本生成形状、渐变、纹理和动画；
+  `pixel_art` 生成静态像素画；`pixel_animation` 支持显式逐帧或基础精灵 +
+  动作预设。
+- **oy-pixel 同构 shader 设计**：Canvas 绘图 API、`pal/mix/hsv/alpha/rand/noise`、
+  `time/phase/frame_index/frame_count`、确定性种子、形状裁剪、`stamp`。
+  语言是安全 Lua 子集，不是嵌入完整 Lua；设计契约与 oy-pixel 对齐。
 - **真实素材导出**：透明 PNG、GIF89a、精灵表 + JSON atlas、OYPX v2 工程、
   manifest；独立 HTML viewer 可选。
 - **绘画技巧约束**：注册 DSH 系统提示词段 `pixel-studio:craft`，把
-  oy-pixel 的 `PIXEL ART CRAFT` / `PIXEL ANIMATION CRAFT` 规则注入每次生成。
+  oy-pixel 的 `PIXEL_AGENT_INSTRUCTIONS` 工作流和 `PIXEL ART CRAFT` /
+  `PIXEL ANIMATION CRAFT` 技巧注入每次生成。
 - **Craft 报告**：自动检查对比度、孤立像素、循环缝、帧时长、颜色数量和
   剪影覆盖率，并写入工具结果与 manifest。
-- **零运行时依赖**：Host 只用 Node 内置模块；Client 使用 DSH 自带的 React。
+- **零运行时依赖**：Host 只用 Node 内置模块；Shader 在受限解释器中执行；
+  Client 使用 DSH 自带的 React。
 - **不访问网络**：只读写 Session 工作目录下的文件。
 
 ## 环境要求
@@ -119,6 +128,29 @@ pnpm add "link:/absolute/path/to/dsh-pixel-studio"
 }
 ```
 
+## 程序化 shader
+
+`pixel_shader` 对齐 oy-pixel `pixel_run_shader` 的设计：脚本在 Canvas 上绘制，
+使用 `pal()`、`mix()`、`hsv()`、`alpha()`、`rand()`、`noise()`，通过
+`time` / `phase` 采样动画帧。语言是受控 Lua 子集（不是完整 Lua）：
+
+```json
+{
+  "name": "shader-horizon",
+  "width": 32,
+  "height": 32,
+  "palette": "studio",
+  "seed": 12,
+  "code": "for y = 0, height - 1 do\n  local t = y / (height - 1)\n  for x = 0, width - 1 do canvas.pset(x, y, mix(hex('#0B1026'), hex('#FF8A5C'), t * t)) end\nend\ncanvas.circfill(width * 0.7, height * 0.72, 7, hex('#FFEC27'))"
+}
+```
+
+支持 `local`、赋值、调用、`if/elseif/else`、数值 `for`、`while`、`break`、
+表构造和 `[key]` 索引；Canvas API 包括 `pset/pget/line/rect/rectfill/
+circle/circfill/ellipse/ellipsefill/flood/replace/outline/clear/stamp`。
+没有文件系统、网络、`require` 或宿主全局，脚本受指令数、时间和像素修改预算限制。
+完整 API 和与 oy-pixel 的设计映射见 [docs/SHADER.md](docs/SHADER.md)。
+
 ## 输出
 
 ```text
@@ -133,7 +165,8 @@ pixel-art/
   moss-slime-viewer.html         可选：includeViewer: true
 ```
 
-内嵌 Canvas 预算：**131,072 像素 / 64 色**；超限时退回为打开文件的紧凑面板。
+内嵌 Canvas 预算：**131,072 像素 / 4,096 色**（超过 64 色时每像素使用两个符号），
+超限时退回为打开文件的紧凑面板。
 GIF 透明度为 1-bit，时间粒度为 10 ms。OYPX 最多 256 色。
 
 ## 开发与测试
@@ -145,6 +178,7 @@ npm test
 npm run check
 npm run demo
 npm run demo:showcase
+npm run demo:shader
 ```
 
 代码结构：
@@ -153,9 +187,11 @@ npm run demo:showcase
 lib/
   index.js            Host 入口
   plugin.js           DSH 工具注册、参数校验、内嵌画布
-  craft-prompt.js     绘画技巧系统提示词段
+  craft-prompt.js     oy-pixel 工作流 + 绘画技巧系统提示词段
   client.js           Client 工具视图
   pixel/              渲染、编码、导出、craft 检查
+  pixel/shader.js     程序化 shader 运行时 + Canvas API
+  pixel/lua/          Lua 子集 lexer/parser/interpreter
 scripts/              示例生成脚本
 test/                 Node 测试
 examples/             生成结果示例

@@ -4,6 +4,32 @@ All notable changes to this project are documented here. The format is based on
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2026-10-21
+
+### Added
+
+- `pixel_shader`, a procedural generation tool that follows oy-pixel's
+  `pixel_run_shader` design: an oy-pixel-style canvas API, 1-based `pal()`,
+  `mix`/`hsv`/`alpha`, seeded `rand`/`noise`, `time`/`phase`/`frame_index`/
+  `frame_count` animation uniforms, shape clipping, `stamp`, and line-numbered
+  errors.
+- A bounded Lua-subset lexer, parser and tree-walking interpreter with no host
+  access. Supports `local`, assignment, calls, `if/elseif/else`, numeric `for`,
+  `while`, `break`, table constructors and `[key]` indexing.
+- A native chat view, client label and shared output pipeline for
+  `pixel_shader`.
+- A procedural `shader-horizon` example and `npm run demo:shader`.
+- Two-symbol palette-indexed inline frames (`i2`) so shader gradients with up
+  to 4,096 colours still render in the native chat canvas.
+- Rebuilt `pixel-studio:craft` prompt following oy-pixel's
+  `PIXEL_AGENT_INSTRUCTIONS` workflow: prefer shaders over long rows, one
+  composition pass, one verification pass, motion parametrization, blockout,
+  easing, anticipation, overshoot, smears, sub-pixel motion and loop seams.
+
+### Changed
+
+- `pixel-studio:craft` now references all three tools and the shader API.
+
 ## [1.1.0] - 2026-10-21
 
 ### Added
@@ -42,5 +68,6 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Initial pre-release: palette-aware pixel rendering, PNG/GIF, spritesheets,
   OYPX export, HTML viewer, craft prompt and tests.
 
+[1.2.0]: https://github.com/Fantety/dsh-pixel-studio/releases/tag/v1.2.0
 [1.1.0]: https://github.com/Fantety/dsh-pixel-studio/releases/tag/v1.1.0
 [1.0.0]: https://github.com/Fantety/dsh-pixel-studio/releases/tag/v1.0.0
