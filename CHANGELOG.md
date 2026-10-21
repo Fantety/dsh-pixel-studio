@@ -18,7 +18,8 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   `while`, `break`, table constructors and `[key]` indexing.
 - A native chat view, client label and shared output pipeline for
   `pixel_shader`.
-- A procedural `shader-horizon` example and `npm run demo:shader`.
+- Procedural `shader-horizon` and `shader-orb` examples plus
+  `npm run demo:shader`.
 - Two-symbol palette-indexed inline frames (`i2`) so shader gradients with up
   to 4,096 colours still render in the native chat canvas.
 - Rebuilt `pixel-studio:craft` prompt following oy-pixel's
