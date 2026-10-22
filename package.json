@@ -1,6 +1,6 @@
 {
   "name": "dsh-pixel-studio",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Native in-chat pixel art and animation studio for DeepSeek Harness, with an oy-pixel-style procedural shader plus PNG/GIF, spritesheet and OYPX export.",
   "type": "module",
   "main": "lib/index.js",
@@ -32,7 +32,8 @@
     "README.zh.md",
     "CHANGELOG.md",
     "THIRD_PARTY_NOTICES.md",
-    "LICENSE"
+    "LICENSE",
+    "screenshots.json"
   ],
   "repository": {
     "type": "git",

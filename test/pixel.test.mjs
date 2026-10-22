@@ -478,6 +478,24 @@ test('shader output uses the shared artifact and inline-canvas pipeline', () => 
   }
 });
 
+test('release metadata provides storefront screenshots and a version-free tarball', () => {
+  const packageJson = JSON.parse(fs.readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
+  assert.ok(packageJson.files.includes('screenshots.json'));
+  const screenshots = JSON.parse(fs.readFileSync(new URL('../screenshots.json', import.meta.url), 'utf8'));
+  assert.ok(Array.isArray(screenshots));
+  assert.ok(screenshots.length >= 1 && screenshots.length <= 8);
+  for (const screenshot of screenshots) {
+    assert.match(screenshot, /^(?!\/)(?!.*\.\.).+\.(png|jpe?g|webp|gif)$/i);
+    assert.ok(fs.existsSync(new URL(`../${screenshot}`, import.meta.url)), screenshot);
+  }
+  const release = fs.readFileSync(new URL('../.github/workflows/release.yml', import.meta.url), 'utf8');
+  assert.match(release, /tags:\s*\n\s*- "v\*"/);
+  assert.match(release, /npm pack/);
+  assert.match(release, /cp dsh-pixel-studio-\*\.tgz dsh-pixel-studio\.tgz/);
+  assert.match(release, /gh release create/);
+  assert.match(release, /dsh-pixel-studio\.tgz/);
+});
+
 test('the client bundle is a loadable tool-view registration', () => {
   const packageJson = JSON.parse(fs.readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
   assert.equal(packageJson.license, 'MIT');

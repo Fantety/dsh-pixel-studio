@@ -86,6 +86,39 @@ dsh plugin --profile my-profile add \
 重新加载 profile，然后**刷新一次 Web 页面**以加载 Client bundle。刷新后工具卡片
 仍是通用卡片时，重启一次 DSH。
 
+### 预构建 Release tarball
+
+每个 `v*` tag 会发布一个不带版本号文件名的 tarball：
+
+```text
+https://github.com/Fantety/dsh-pixel-studio/releases/latest/download/dsh-pixel-studio.tgz
+```
+
+可直接安装：
+
+```bash
+dsh plugin --profile my-profile add \
+  "https://github.com/Fantety/dsh-pixel-studio/releases/latest/download/dsh-pixel-studio.tgz"
+```
+
+也可作为商店的 `tarball:` 地址。文件名刻意不带版本号，避免
+`releases/latest/download/` 在下个版本后失效。
+
+### awesome-dsh-plugin 条目
+
+仓库已声明 `dsh.bundle` 并提供 Release tarball。可直接提交到
+`data/plugins/Fantety__dsh-pixel-studio.yml`：
+
+```yaml
+url: https://github.com/Fantety/dsh-pixel-studio
+name: Fantety/dsh-pixel-studio
+category: fun
+description:
+  en: In-chat pixel art and animation tools with a procedural shader, native canvas, and PNG/GIF/OYPX export.
+  zh: 聊天内像素画与像素动画工具，支持程序化 Shader、原生 Canvas 与 PNG/GIF/OYPX 导出。
+tarball: https://github.com/Fantety/dsh-pixel-studio/releases/latest/download/dsh-pixel-studio.tgz
+```
+
 本地开发：
 
 ```bash

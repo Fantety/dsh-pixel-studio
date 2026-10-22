@@ -135,6 +135,19 @@ No image request, data URL, iframe or network access is needed.
 - No third-party runtime dependencies are bundled. The GIF/PNG/OYPX encoders
   are local implementations.
 
+## Release pipeline
+
+`.github/workflows/release.yml` runs on `v*` tags:
+
+1. `npm ci`, `npm test`;
+2. `npm pack`;
+3. copy the versioned tarball to the version-free `dsh-pixel-studio.tgz`;
+4. create the GitHub Release with `GITHUB_TOKEN` and attach the tarball.
+
+The version-free asset supports the stable
+`releases/latest/download/dsh-pixel-studio.tgz` URL used by storefronts.
+`screenshots.json` lists four repository images for storefront previews.
+
 ## Compatibility
 
 - DSH 0.2.x, client platform `web`.

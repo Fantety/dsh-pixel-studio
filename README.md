@@ -127,6 +127,40 @@ Plugin Manager rather than editing that profile by hand.
 Reload the profile, then **refresh the Web GUI once** so the client bundle is
 loaded. If the tool card is still generic after a refresh, restart DSH.
 
+### Prebuilt release tarball
+
+Every `v*` tag publishes a version-free tarball:
+
+```text
+https://github.com/Fantety/dsh-pixel-studio/releases/latest/download/dsh-pixel-studio.tgz
+```
+
+It can be used directly:
+
+```bash
+dsh plugin --profile my-profile add \
+  "https://github.com/Fantety/dsh-pixel-studio/releases/latest/download/dsh-pixel-studio.tgz"
+```
+
+or advertised by a storefront with the `tarball:` field. The asset name
+intentionally carries no version so `releases/latest/download/` does not rot
+after the next release.
+
+### awesome-dsh-plugin entry
+
+The repository declares `dsh.bundle` and publishes a release tarball. A ready
+entry for `data/plugins/Fantety__dsh-pixel-studio.yml` is:
+
+```yaml
+url: https://github.com/Fantety/dsh-pixel-studio
+name: Fantety/dsh-pixel-studio
+category: fun
+description:
+  en: In-chat pixel art and animation tools with a procedural shader, native canvas, and PNG/GIF/OYPX export.
+  zh: 聊天内像素画与像素动画工具，支持程序化 Shader、原生 Canvas 与 PNG/GIF/OYPX 导出。
+tarball: https://github.com/Fantety/dsh-pixel-studio/releases/latest/download/dsh-pixel-studio.tgz
+```
+
 ### Local development link
 
 ```bash
